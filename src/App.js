@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Header  from "./components/Layouts/Header";
+import Header from "./components/Layouts/Header";
 import Footer from "./components/Layouts/Footer";
-import Developer from "./components/Pages/Developer";
+import Spaans from "./components/Pages/Spaans";
 
 import { ThemeProvider } from "@material-ui/styles";
 import theme from "./components/Theme";
@@ -32,32 +32,34 @@ function App() {
           />
           <Route
             exact
-            path="/about-us"
-            component={() => <div style={{ minHeight: "100vh" }}>About Us</div>}
+            path="/mijn-profiel"
+            component={() => (
+              <div style={{ minHeight: "100vh" }}>Mijn Profiel</div>
+            )}
           />
           <Route
             exact
-            path="/courses"
-            component={() => <div style={{ minHeight: "100vh" }}>Courses</div>}
+            path="/vakken"
+            component={() => <div style={{ minHeight: "100vh" }}>Vakken</div>}
           />
           <Route
             exact
             path="/tester"
             component={() => <div style={{ minHeight: "100vh" }}>Tester</div>}
           />
-          <Route exact path="/developer" component={() => <Developer />} />
+          <Route exact path="/spaans" component={() => <Spaans />} />
           <Route
             exact
-            path="/our-teachers"
+            path="/onze-leraren"
             component={() => (
-              <div style={{ minHeight: "100vh" }}>Our Teachers</div>
+              <div style={{ minHeight: "100vh" }}>Onze Leraren</div>
             )}
           />
           <Route
             exact
-            path="/our-students"
+            path="/onze-studenten"
             component={() => (
-              <div style={{ minHeight: "100vh" }}>Our Students</div>
+              <div style={{ minHeight: "100vh" }}>Onze Studenten</div>
             )}
           />
           <Route

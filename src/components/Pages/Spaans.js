@@ -4,7 +4,7 @@ import React from "react";
 
 // const useStyles = makeStyles((theme) => ({}));
 
-const Developer = () => {
-  return <div style={{ minHeight: "100vh" }}>Developer</div>;
+const Spaans = () => {
+  return <div style={{ minHeight: "100vh" }}>Spaans</div>;
 };
-export default Developer;
+export default Spaans;

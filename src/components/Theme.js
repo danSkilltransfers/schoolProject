@@ -21,13 +21,13 @@ export default createMuiTheme({
       black: `${Black}`,
     },
     primary: { main: `${Blue}` },
-    secondary: { main: `${Green}` },
+    secondary: { main: `${White}` },
   },
   typography: {
     h3: {
       fontFamily: "Poppins",
       fontStyle: "normal",
-      fontWeight: "400",
+      fontWeight: "600",
       fontSize: "27px",
       lineHeight: "38px",
     },
@@ -49,7 +49,7 @@ export default createMuiTheme({
       fontSize: "16px",
       fontWeight: "400",
       textTransform: "none",
-      color: "white",
+      color:"white"
     },
   },
 });

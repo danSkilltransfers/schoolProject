@@ -22,17 +22,21 @@ import {
   Hidden,
   Typography,
   TextField,
+  Badge,
+  Avatar,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import { useTheme } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 import MenuOpenIcon from "@material-ui/icons/MenuOpen";
+import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import { Link } from "react-router-dom";
 
 import logo from "../../assets/logo.svg";
 import imageGroup from "../../assets/imageGroup.png";
 import uk from "../../assets/uk.png";
 import nl from "../../assets/nl.png";
+import loggedInAvatar from "../../assets/loggedInAvatar.png";
 
 const useStyles = makeStyles((theme) => ({
   toolbarMargin: {
@@ -50,6 +54,7 @@ const useStyles = makeStyles((theme) => ({
   },
   menu: {
     backgroundColor: theme.palette.common.blue,
+    color: "white",
     borderRadius: "0px",
     zIndex: 1302,
   },
@@ -60,9 +65,9 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerIconContainer: {
     padding: 0,
-    "&:hover": { backgroundColor: "transparent", },
+    "&:hover": { backgroundColor: "transparent" },
   },
-  drawerIcon: { height: "40px", width: "40px" , marginLeft: "-2rem"},
+  drawerIcon: { height: "40px", width: "40px", marginLeft: "-2rem" },
   drawer: { backgroundColor: theme.palette.common.blue, minWidth: "30vw" },
   drawerItemText: {
     ...theme.typography.tab,
@@ -76,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
   },
   maincontainer: {
     minHeight: "5rem",
-    [theme.breakpoints.down("sm")]: { minHeight: "3rem", padding:0 },
+    [theme.breakpoints.down("sm")]: { minHeight: "3rem", padding: 0 },
   },
   signinbutton: {
     border: `1px solid ${theme.palette.common.lightblue}`,
@@ -91,11 +96,16 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("xs")]: { padding: "2px 8px", marginLeft: "-1rem" },
   },
+  avatarText: {},
+  avatar: {
+    width: "3.5rem",
+    height: "3.5rem",
+    [theme.breakpoints.down("sm")]: { width: "2rem", height: "2rem" },
+  },
   banner: {
     height: "30rem",
   },
-  searchfield: { width: "31rem", paddingTop: "4rem" },
-
+  searchfield: { width: "31rem", paddingTop: "2rem" },
   textfield: {
     backgroundColor: theme.palette.common.white,
     width: "100%",
@@ -117,7 +127,7 @@ const useStyles = makeStyles((theme) => ({
   languagecontainer: {
     position: "absolute",
     right: "4vw",
-    [theme.breakpoints.down("md")]: { width: "24px" },
+    [theme.breakpoints.down("md")]: { right: "3vw", width: "24px" },
     [theme.breakpoints.down("sm")]: { right: "3vw" },
     [theme.breakpoints.down("xs")]: { right: "1vw" },
   },
@@ -142,6 +152,7 @@ export default function Header(props) {
   const [openMenu, setOpenMenu] = useState(false);
   const [openDrawer, setOpenDrawer] = useState(false);
   const [openBanner, setOpenBanner] = useState(false);
+  const [signIn, setSignIn] = useState(false);
 
   //takes care of index of tabs
   const handleTabsChange = (e, newValue) => {
@@ -175,15 +186,14 @@ export default function Header(props) {
   }
 
   const menuOptions = [
-    { name: "Tester", link: "/tester", activeIndex: 1, selectedIndex: 0 },
-    { name: "Developer", link: "/developer", activeIndex: 1, selectedIndex: 1 },
+    { name: "Spaans", link: "/spaans", activeIndex: 1, selectedIndex: 0 },
   ];
 
   const routes = [
-    { name: "About Us", link: "/about-us", activeIndex: 0 },
+    { name: "Mijn Profiel", link: "/mijn-profiel", activeIndex: 0 },
     {
-      name: "Courses",
-      link: "/courses",
+      name: "Vakken",
+      link: "/vakken",
       activeIndex: 1,
       //ariaOwns identifies an element
       //anchorEl is an element inside the menu
@@ -192,8 +202,8 @@ export default function Header(props) {
       ariaHaspopup: anchorEl ? "true" : undefined,
       onMouseOver: (e) => handleClick(e),
     },
-    { name: "Our Teachers", link: "/our-teachers", activeIndex: 2 },
-    { name: "Our Students", link: "/our-students", activeIndex: 3 },
+    { name: "Onze Leraren", link: "/onze-leraren", activeIndex: 2 },
+    { name: "Onze Studenten", link: "/onze-studenten", activeIndex: 3 },
   ];
 
   const tabs = (
@@ -212,6 +222,7 @@ export default function Header(props) {
           />
         ))}
       </Tabs>
+
       <Popper
         open={openMenu}
         anchorEl={anchorEl}
@@ -354,9 +365,36 @@ export default function Header(props) {
               </Grid>
               <Grid item>{matches ? drawer : tabs}</Grid>
               <Grid item>
-                <Button className={classes.signinbutton} variant="outlined">
-                  Sign In
-                </Button>
+                {signIn ? (
+                  <Grid container justify="center" alignItems="center">
+                    <Grid item>
+                      <h6>Jonas</h6>
+                    </Grid>
+                    <Grid item>
+                      <Badge
+                        color="error"
+                        overlap="circle"
+                        variant="dot"
+                        anchorOrigin={{
+                          vertical: "top",
+                          horizontal: "right",
+                        }}>
+                        <Avatar
+                          alt="Jonas"
+                          src={loggedInAvatar}
+                          className={classes.avatar}
+                        />
+                      </Badge>
+                    </Grid>
+                  </Grid>
+                ) : (
+                  <Button
+                    className={classes.signinbutton}
+                    variant="outlined"
+                    onClick={() => setSignIn(true)}>
+                    Sign In
+                  </Button>
+                )}
               </Grid>
               <Grid item className={classes.languagecontainer}>
                 <IconButton size="small">
@@ -397,14 +435,7 @@ export default function Header(props) {
                       md={6}>
                       <Grid item style={{ width: "31rem" }}>
                         <Typography variant="h3">
-                          <b>Skilltransfers</b> delivers <b>In-Person</b> <br />
-                          training for ambitious <br />
-                          <b>
-                            Full Stack{" "}
-                            {window.location.pathname === "/tester"
-                              ? "Testers"
-                              : "Developers"}
-                          </b>
+                          Spaans voor Mavo en Havo
                         </Typography>
                       </Grid>
 
