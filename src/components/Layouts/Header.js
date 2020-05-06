@@ -59,9 +59,10 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": { opacity: 0.8 },
   },
   drawerIconContainer: {
-    "&:hover": { backgroundColor: "transparent" },
+    padding: 0,
+    "&:hover": { backgroundColor: "transparent", },
   },
-  drawerIcon: { height: "40px", width: "40px" },
+  drawerIcon: { height: "40px", width: "40px" , marginLeft: "-2rem"},
   drawer: { backgroundColor: theme.palette.common.blue, minWidth: "30vw" },
   drawerItemText: {
     ...theme.typography.tab,
@@ -75,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
   },
   maincontainer: {
     minHeight: "5rem",
-    [theme.breakpoints.down("sm")]: { minHeight: "3rem" },
+    [theme.breakpoints.down("sm")]: { minHeight: "3rem", padding:0 },
   },
   signinbutton: {
     border: `1px solid ${theme.palette.common.lightblue}`,
@@ -88,7 +89,7 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.common.white,
       backgroundColor: theme.palette.common.darkblue,
     },
-    [theme.breakpoints.down("xs")]: { padding: "2px 8px",},
+    [theme.breakpoints.down("xs")]: { padding: "2px 8px", marginLeft: "-1rem" },
   },
   banner: {
     height: "30rem",
@@ -117,7 +118,7 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     right: "4vw",
     [theme.breakpoints.down("md")]: { width: "24px" },
-    [theme.breakpoints.down("sm")]: { right: "3vw", width: "24px" },
+    [theme.breakpoints.down("sm")]: { right: "3vw" },
     [theme.breakpoints.down("xs")]: { right: "1vw" },
   },
   languageicon: {
@@ -329,7 +330,7 @@ export default function Header(props) {
               alignItems="center"
               className={classes.maincontainer}>
               <Grid item>
-                <Hidden mdUp disablePadding>
+                <Hidden mdUp>
                   <IconButton
                     onClick={() => setOpenDrawer(!openDrawer)}
                     disableRipple

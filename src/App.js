@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import Header from "./components/Layouts/Header";
+import Header  from "./components/Layouts/Header";
 import Footer from "./components/Layouts/Footer";
+import Developer from "./components/Pages/Developer";
+
 import { ThemeProvider } from "@material-ui/styles";
 import theme from "./components/Theme";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
@@ -43,13 +45,7 @@ function App() {
             path="/tester"
             component={() => <div style={{ minHeight: "100vh" }}>Tester</div>}
           />
-          <Route
-            exact
-            path="/developer"
-            component={() => (
-              <div style={{ minHeight: "100vh" }}>Developer</div>
-            )}
-          />
+          <Route exact path="/developer" component={() => <Developer />} />
           <Route
             exact
             path="/our-teachers"
