@@ -31,13 +31,12 @@ import { Link } from "react-router-dom";
 
 import logo from "../../assets/logo.svg";
 import imageGroup from "../../assets/imageGroup.png";
+import uk from "../../assets/uk.png";
+import nl from "../../assets/nl.png";
 
 const useStyles = makeStyles((theme) => ({
   toolbarMargin: {
     ...theme.mixins.toolbar,
-    marginBottom: "2rem",
-    [theme.breakpoints.down("sm")]: { marginBottom: ".7rem" },
-    [theme.breakpoints.down("xs")]: { marginBottom: ".5rem" },
   },
   logo: {
     height: "3em",
@@ -89,6 +88,7 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.common.white,
       backgroundColor: theme.palette.common.darkblue,
     },
+    [theme.breakpoints.down("xs")]: { padding: "2px 8px",},
   },
   banner: {
     height: "30rem",
@@ -113,8 +113,19 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "500",
     fontSize: "20px",
   },
+  languagecontainer: {
+    position: "absolute",
+    right: "4vw",
+    [theme.breakpoints.down("md")]: { width: "24px" },
+    [theme.breakpoints.down("sm")]: { right: "3vw", width: "24px" },
+    [theme.breakpoints.down("xs")]: { right: "1vw" },
+  },
   languageicon: {
-    borderRadius: "50%",
+    width: "24px",
+    [theme.breakpoints.down("sm")]: { width: "18px" },
+    "&:hover": {
+      transform: "scale(1.3)",
+    },
   },
 }));
 
@@ -318,7 +329,7 @@ export default function Header(props) {
               alignItems="center"
               className={classes.maincontainer}>
               <Grid item>
-                <Hidden mdUp>
+                <Hidden mdUp disablePadding>
                   <IconButton
                     onClick={() => setOpenDrawer(!openDrawer)}
                     disableRipple
@@ -346,13 +357,22 @@ export default function Header(props) {
                   Sign In
                 </Button>
               </Grid>
-              <Grid item>
-                <Button className={classes.languageicon} variant="outlined">
-                  nl
-                </Button>
-                <Button className={classes.languageicon} variant="outlined">
-                  gb
-                </Button>
+              <Grid item className={classes.languagecontainer}>
+                <IconButton size="small">
+                  <img
+                    src={uk}
+                    alt="uk flag"
+                    className={classes.languageicon}
+                  />
+                </IconButton>
+
+                <IconButton size="small">
+                  <img
+                    src={nl}
+                    alt="nl flag"
+                    className={classes.languageicon}
+                  />
+                </IconButton>
               </Grid>
             </Grid>
 
