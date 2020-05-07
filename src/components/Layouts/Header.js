@@ -83,16 +83,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: { minHeight: "3rem", padding: 0 },
   },
   signinbutton: {
-    border: `1px solid ${theme.palette.common.lightblue}`,
-    borderRadius: "40px",
-    backgroundColor: theme.palette.common.white,
-    padding: "4px 16px",
-    color: theme.palette.common.lightblue,
-    textTransform: "none",
-    "&:hover": {
-      color: theme.palette.common.white,
-      backgroundColor: theme.palette.common.darkblue,
-    },
+    ...theme.typography.roundbutton,
     [theme.breakpoints.down("xs")]: { padding: "2px 8px", marginLeft: "-1rem" },
   },
   avatarText: {},
@@ -115,8 +106,6 @@ const useStyles = makeStyles((theme) => ({
     ...theme.typography.bluebutton,
     width: "10rem",
     height: "4rem",
-    "&:hover": { background: theme.palette.common.darkblue },
-
     fontFamily: "Poppins",
     fontWeight: "500",
     fontSize: "20px",
@@ -136,8 +125,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-
-
 
 export default function Header(props) {
   const classes = useStyles();

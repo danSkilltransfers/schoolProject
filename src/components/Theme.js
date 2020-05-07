@@ -7,6 +7,8 @@ const Green = "#21c3b5";
 const White = "#ffffff";
 const ChapterText = "#666A6A";
 const Black = "rgba(0, 0, 0, 0.5)";
+const TitleGray = "#C4C4C4";
+
 const BannerBlue =
   "linear-gradient(136.88deg, #2176A7 41.34%, #0AB5FE 102.25%)";
 
@@ -21,6 +23,7 @@ export default createMuiTheme({
       bannerblue: `${BannerBlue}`,
       black: `${Black}`,
       chaptertext: `${ChapterText}`,
+      titlegray: `${TitleGray}`,
     },
     primary: { main: `${Blue}` },
     secondary: { main: `${White}` },
@@ -59,11 +62,22 @@ export default createMuiTheme({
     },
     textDescription: {
       padding: "3rem 0 0 5rem",
-      
+    },
+    roundbutton: {
+      border: `1px solid ${LightBlue}`,
+      borderRadius: "40px",
+      backgroundColor: `${White}`,
+      padding: "4px 16px",
+      color: `${LightBlue}`,
+      textTransform: "none",
+      "&:hover": {
+        color: `${White}`,
+        backgroundColor: `${LightBlue}`,
+      },
     },
     bluebutton: {
       background: `${LightBlue}`,
-      "&:hover": { background: `${DarkBlue}` },
+      "&:hover": { background: `${LightBlue}` },
       borderRadius: "3px",
       textTransform: "none",
       color: `${White}`,

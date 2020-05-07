@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Grid, Button, Paper, Typography } from "@material-ui/core";
 
@@ -29,19 +29,36 @@ const useStyles = makeStyles((theme) => ({
     ...theme.typography.bluebutton,
     width: "8rem",
   },
+  roundbutton: {
+    ...theme.typography.roundbutton,
+    margin: ".5rem",
+  },
   smallbluetext: {
     ...theme.typography.smallbluetext,
+    textDecoration: "underline",
   },
   toolbarMargin: {
     ...theme.mixins.toolbar,
-  }
+  },
+  activity: {
+    color: theme.palette.common.titlegray,
+    fontFamily: "Roboto",
+    fontSize: "22px",
+    lineHeight: "26px",
+    textDecoration: "underline",
+    margin: "1rem 0 .5rem",
+  },
 }));
 
 const Spaans = () => {
   const classes = useStyles();
 
+  const [material, setMaterial] = useState(false);
+  const [index, setIndex] = useState(0);
+
   const chaptersData = [
     {
+      index: 0,
       date: "31st/ Sept /2020",
       image: lesson1,
       name: "Hoofdstuk 1: ¡Hola!",
@@ -49,6 +66,7 @@ const Spaans = () => {
         "Leer Spaans in de lente! Of je je nu wilt voorbereiden op een reis naar Spanje of een ander Spaanstalig land, of je meer wilt verdiepen in de wereldtaal die deuren opent naar de cultuur van al die landen",
     },
     {
+      index: 1,
       date: "31st/ June /2020",
       image: lesson2,
       name: "Hoofdstuk 2: Paises de habla hispana",
@@ -56,6 +74,7 @@ const Spaans = () => {
         "Leer Spaans in de lente! Of je je nu wilt voorbereiden op een reis naar Spanje of een ander Spaanstalig land, of je meer wilt verdiepen in de wereldtaal die deuren opent naar de cultuur van al die landen",
     },
     {
+      index: 2,
       date: "31st/ July /2020",
       image: lesson3,
       name: "Hoofdstuk 3: La familia",
@@ -63,6 +82,7 @@ const Spaans = () => {
         "Leer Spaans in de lente! Of je je nu wilt voorbereiden op een reis naar Spanje of een ander Spaanstalig land, of je meer wilt verdiepen in de wereldtaal die deuren opent naar de cultuur van al die landen",
     },
     {
+      index: 3,
       date: "31st/ May /2020",
       image: lesson4,
       name: "Hoofdstuk 4: Comis y bebidas",
@@ -70,6 +90,7 @@ const Spaans = () => {
         "Leer Spaans in de lente! Of je je nu wilt voorbereiden op een reis naar Spanje of een ander Spaanstalig land, of je meer wilt verdiepen in de wereldtaal die deuren opent naar de cultuur van al die landen",
     },
     {
+      index: 4,
       date: "31st/ May /2020",
       image: lesson5,
       name: "Hoofdstuk 5: ¿Dónde están las llaves?",
@@ -77,6 +98,7 @@ const Spaans = () => {
         "Leer Spaans in de lente! Of je je nu wilt voorbereiden op een reis naar Spanje of een ander Spaanstalig land, of je meer wilt verdiepen in de wereldtaal die deuren opent naar de cultuur van al die landen",
     },
     {
+      index: 5,
       date: "31st/ May /2020",
       image: lesson6,
       name: "Hoofdstuk 6: ¿A dónde vas?",
@@ -86,7 +108,7 @@ const Spaans = () => {
   ];
 
   const Chapter = chaptersData.map((lesson) => (
-    <Paper className={classes.paper} square={true} key={`${lesson.name}`}>
+    <Paper className={classes.paper} square={true} key={`${lesson.index}`}>
       <Grid container direction="column" spacing={1}>
         <Grid item>
           <Grid
@@ -105,10 +127,8 @@ const Spaans = () => {
               </Grid>
             </Grid>
             <Grid item className={classes.smallbluetext}>
-              <u>
-                Hoofdstuk verschuldigd voor: <br />
-                {lesson.date}
-              </u>
+              Hoofdstuk verschuldigd voor: <br />
+              {lesson.date}
             </Grid>
           </Grid>
         </Grid>
@@ -130,8 +150,155 @@ const Spaans = () => {
                     <u>{lesson.name}</u>
                   </Typography>
                 </Grid>
+
                 <Grid item>
-                  <Typography variant="h6">{lesson.description}</Typography>
+                  {material && index === lesson.index ? (
+                    <Grid container direction="column">
+                      <Grid item>
+                        <Typography className={classes.activity}>
+                          Actividades Vocabulario
+                        </Typography>
+                        <Grid item container spacing={2}>
+                          <Button
+                            variant="outlined"
+                            className={classes.roundbutton}>
+                            <Typography variant="h6">Ejercicio 1</Typography>
+                          </Button>
+                          <Button
+                            variant="outlined"
+                            className={classes.roundbutton}>
+                            <Typography variant="h6">Ejercicio 3</Typography>
+                          </Button>
+                          <Button
+                            variant="outlined"
+                            className={classes.roundbutton}>
+                            <Typography variant="h6">Ejercicio 7</Typography>
+                          </Button>
+                          <Button
+                            variant="outlined"
+                            className={classes.roundbutton}>
+                            <Typography variant="h6">Ejercicio 9</Typography>
+                          </Button>
+                          <Button
+                            variant="outlined"
+                            className={classes.roundbutton}>
+                            <Typography variant="h6">Ejercicio 10</Typography>
+                          </Button>
+                          <Button
+                            variant="outlined"
+                            className={classes.roundbutton}>
+                            <Typography variant="h6">Ejercicio 11</Typography>
+                          </Button>
+                        </Grid>
+
+                        <Grid item>
+                          <Typography className={classes.activity}>
+                            Actividades Gramática
+                          </Typography>
+                          <Grid item container spacing={2}>
+                            <Button
+                              variant="outlined"
+                              className={classes.roundbutton}>
+                              <Typography variant="h6">Ejercicio 1</Typography>
+                            </Button>
+                            <Button
+                              variant="outlined"
+                              className={classes.roundbutton}>
+                              <Typography variant="h6">Ejercicio 3</Typography>
+                            </Button>
+                            <Button
+                              variant="outlined"
+                              className={classes.roundbutton}>
+                              <Typography variant="h6">Ejercicio 4</Typography>
+                            </Button>
+                            <Button
+                              variant="outlined"
+                              className={classes.roundbutton}>
+                              <Typography variant="h6">Ejercicio 5</Typography>
+                            </Button>
+                            <Button
+                              variant="outlined"
+                              className={classes.roundbutton}>
+                              <Typography variant="h6">Ejercicio 6</Typography>
+                            </Button>
+                            <Button
+                              variant="outlined"
+                              className={classes.roundbutton}>
+                              <Typography variant="h6">Ejercicio 7</Typography>
+                            </Button>
+                          </Grid>
+                        </Grid>
+
+                        <Grid item>
+                          <Typography className={classes.activity}>
+                            Actividades Comunicación
+                          </Typography>
+                          <Grid item container spacing={2}>
+                            <Button
+                              variant="outlined"
+                              className={classes.roundbutton}>
+                              <Typography variant="h6">Ejercicio 4</Typography>
+                            </Button>
+                            <Button
+                              variant="outlined"
+                              className={classes.roundbutton}>
+                              <Typography variant="h6">Ejercicio 6</Typography>
+                            </Button>
+                            <Button
+                              variant="outlined"
+                              className={classes.roundbutton}>
+                              <Typography variant="h6">Ejercicio 8</Typography>
+                            </Button>
+                          </Grid>
+
+                          <Grid item>
+                            <Typography className={classes.activity}>
+                              Actividades Reflexión y evaluación
+                            </Typography>
+                            <Grid item container>
+                              <Button
+                                variant="outlined"
+                                className={classes.roundbutton}>
+                                <Typography variant="h6">
+                                  Ejercicio 1
+                                </Typography>
+                              </Button>
+                              <Button
+                                variant="outlined"
+                                className={classes.roundbutton}>
+                                <Typography variant="h6">
+                                  Ejercicio 2
+                                </Typography>
+                              </Button>
+                              <Button
+                                variant="outlined"
+                                className={classes.roundbutton}>
+                                <Typography variant="h6">
+                                  Ejercicio 3
+                                </Typography>
+                              </Button>
+                              <Button
+                                variant="outlined"
+                                className={classes.roundbutton}>
+                                <Typography variant="h6">
+                                  Ejercicio 4
+                                </Typography>
+                              </Button>
+                              <Button
+                                variant="outlined"
+                                className={classes.roundbutton}>
+                                <Typography variant="h6">
+                                  Ejercicio 5
+                                </Typography>
+                              </Button>
+                            </Grid>
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                    </Grid>
+                  ) : (
+                    <Typography variant="h6">{lesson.description}</Typography>
+                  )}
                 </Grid>
               </Grid>
             </Grid>
@@ -143,7 +310,14 @@ const Spaans = () => {
               direction="column"
               justify="flex-end"
               alignItems="flex-end">
-              <Button className={classes.bluebutton}>Kies Lessen</Button>
+              <Button
+                className={classes.bluebutton}
+                onClick={() => {
+                  setMaterial(!material);
+                  setIndex(lesson.index);
+                }}>
+                {material && index === lesson.index ? "Cancel" : "Kies Lessen"}
+              </Button>
             </Grid>
           </Grid>
         </Grid>
@@ -151,13 +325,21 @@ const Spaans = () => {
     </Paper>
   ));
 
+  // useEffect(() => {
+  //   chaptersData.forEach((lesson) => {
+  //     if (index !== lesson.index && material) {
+  //       setIndex(lesson.index);
+  //     }
+  //   });
+  // }, [index, material, chaptersData]);
+
   return (
     <Container maxWidth="lg">
       <Typography variant="h4" className={classes.description}>
         Hoofdstukken
       </Typography>
       {Chapter}
-      <div className={classes.toolbarMargin}/>
+      <div className={classes.toolbarMargin} />
     </Container>
   );
 };
