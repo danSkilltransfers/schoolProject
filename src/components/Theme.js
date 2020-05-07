@@ -5,6 +5,7 @@ const LightBlue = "#0ab5fe";
 const DarkBlue = "#1A5E86";
 const Green = "#21c3b5";
 const White = "#ffffff";
+const ChapterText = "#666A6A";
 const Black = "rgba(0, 0, 0, 0.5)";
 const BannerBlue =
   "linear-gradient(136.88deg, #2176A7 41.34%, #0AB5FE 102.25%)";
@@ -19,6 +20,7 @@ export default createMuiTheme({
       white: `${White}`,
       bannerblue: `${BannerBlue}`,
       black: `${Black}`,
+      chaptertext: `${ChapterText}`,
     },
     primary: { main: `${Blue}` },
     secondary: { main: `${White}` },
@@ -31,9 +33,13 @@ export default createMuiTheme({
       fontSize: "27px",
       lineHeight: "38px",
     },
+    h4: {
+      fontFamily: "Poppins",
+      fontSize: "22px",
+      lineHeight: "33px",
+    },
     h5: {
       fontFamily: "Poppins",
-
       fontWeight: "500",
       fontSize: "20px",
       lineHeight: "30px",
@@ -49,7 +55,25 @@ export default createMuiTheme({
       fontSize: "16px",
       fontWeight: "400",
       textTransform: "none",
-      color:"white"
+      color: "white",
+    },
+    textDescription: {
+      padding: "3rem 0 0 5rem",
+      
+    },
+    bluebutton: {
+      background: `${LightBlue}`,
+      "&:hover": { background: `${DarkBlue}` },
+      borderRadius: "3px",
+      textTransform: "none",
+      color: `${White}`,
+    },
+    smallbluetext: {
+      fontFamily: "Poppins",
+      fontSize: "10px",
+      lineHeight: "15px",
+      color: `${LightBlue}`,
+      textAlign: "right",
     },
   },
 });

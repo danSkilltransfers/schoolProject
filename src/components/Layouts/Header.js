@@ -29,7 +29,6 @@ import { makeStyles } from "@material-ui/styles";
 import { useTheme } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 import MenuOpenIcon from "@material-ui/icons/MenuOpen";
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import { Link } from "react-router-dom";
 
 import logo from "../../assets/logo.svg";
@@ -112,14 +111,12 @@ const useStyles = makeStyles((theme) => ({
     height: "4rem",
     borderRadius: "3px",
   },
-  bannerbutton: {
+  bluebutton: {
+    ...theme.typography.bluebutton,
     width: "10rem",
     height: "4rem",
-    background: theme.palette.common.lightblue,
     "&:hover": { background: theme.palette.common.darkblue },
-    color: theme.palette.common.white,
-    borderRadius: "3px",
-    textTransform: "none",
+
     fontFamily: "Poppins",
     fontWeight: "500",
     fontSize: "20px",
@@ -140,7 +137,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-//takes care of hiding the header
+
 
 export default function Header(props) {
   const classes = useStyles();
@@ -332,7 +329,7 @@ export default function Header(props) {
   return (
     <>
       <AppBar className={classes.appbar}>
-        <Container>
+        <Container maxWidth="lg">
           <Grid container direction="column">
             <Grid
               item
@@ -420,12 +417,11 @@ export default function Header(props) {
                 component="div"
                 visibility="visible"
                 display={openBanner && !matches ? "block" : "none"}>
-                <Container>
+                <Container maxWidth="lg">
                   <Grid
                     container
                     className={classes.banner}
-                    justify="space-between"
-                    direction="row">
+                    justify="space-between">
                     <Grid
                       item
                       container
@@ -448,7 +444,7 @@ export default function Header(props) {
                           />
                         </Grid>
                         <Grid item sm={4}>
-                          <Button className={classes.bannerbutton}>
+                          <Button className={classes.bluebutton}>
                             Find Your Skill
                           </Button>
                         </Grid>
@@ -456,7 +452,11 @@ export default function Header(props) {
                     </Grid>
 
                     <Grid item md={6}>
-                      <img src={imageGroup} alt="banner" width={"100%"} />
+                      <img
+                        src={imageGroup}
+                        alt="banner"
+                        className={classes.imagegroup}
+                      />
                     </Grid>
                   </Grid>
                 </Container>
