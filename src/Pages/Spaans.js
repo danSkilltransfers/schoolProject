@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Grid, Button, Paper, Typography } from "@material-ui/core";
 
-import shareIcon from "../../assets/shareIcon.png";
-import lesson1 from "../../assets/lesson/lesson1.png";
-import lesson2 from "../../assets/lesson/lesson2.png";
-import lesson3 from "../../assets/lesson/lesson3.png";
-import lesson4 from "../../assets/lesson/lesson4.png";
-import lesson5 from "../../assets/lesson/lesson5.png";
-import lesson6 from "../../assets/lesson/lesson6.png";
+import shareIcon from "../assets/shareIcon.png";
+import lesson1 from "../assets/lesson/lesson1.png";
+import lesson2 from "../assets/lesson/lesson2.png";
+import lesson3 from "../assets/lesson/lesson3.png";
+import lesson4 from "../assets/lesson/lesson4.png";
+import lesson5 from "../assets/lesson/lesson5.png";
+import lesson6 from "../assets/lesson/lesson6.png";
 
 const useStyles = makeStyles((theme) => ({
   description: {
@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     margin: ".5rem 1rem 0 0",
     textTransform: "none",
-    width:'8rem'
+    width: "8rem",
   },
 }));
 

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import Header from "./components/Layouts/Header";
-import Footer from "./components/Layouts/Footer";
-import Spaans from "./components/Pages/Spaans";
-import Profil from "./components/Pages/Profil";
+import Header from "./Layouts/Header";
+import Footer from "./Layouts/Footer";
+import Spaans from "./Pages/Spaans";
+import Profil from "./Pages/Profil";
+import Calendar from "./Pages/Calendar";
 
 import { ThemeProvider } from "@material-ui/styles";
-import theme from "./components/Theme";
+import theme from "./Themes/Theme";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
@@ -32,11 +33,7 @@ function App() {
             component={() => <div style={{ minHeight: "100vh" }}>Landing</div>}
           />
           <Route exact path="/mijn-profiel" component={() => <Profil />} />
-          <Route
-            exact
-            path="/calendar"
-            component={() => <div style={{ minHeight: "100vh" }}>Calendar</div>}
-          />
+          <Route exact path="/calendar" component={() => <Calendar />} />
           <Route
             exact
             path="/vakken"

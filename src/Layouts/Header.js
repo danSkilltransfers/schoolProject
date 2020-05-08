@@ -31,11 +31,11 @@ import MenuIcon from "@material-ui/icons/Menu";
 import MenuOpenIcon from "@material-ui/icons/MenuOpen";
 import { Link } from "react-router-dom";
 
-import logo from "../../assets/logo.svg";
-import imageGroup from "../../assets/imageGroup.png";
-import uk from "../../assets/uk.png";
-import nl from "../../assets/nl.png";
-import loggedInAvatar from "../../assets/loggedInAvatar.png";
+import logo from "../assets/logo.svg";
+import imageGroup from "../assets/imageGroup.png";
+import uk from "../assets/uk.png";
+import nl from "../assets/nl.png";
+import loggedInAvatar from "../assets/loggedInAvatar.png";
 
 const useStyles = makeStyles((theme) => ({
   toolbarMargin: {
