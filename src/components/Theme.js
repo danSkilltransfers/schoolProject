@@ -27,6 +27,7 @@ export default createMuiTheme({
     },
     primary: { main: `${Blue}` },
     secondary: { main: `${White}` },
+    error:{ main: `${LightBlue}` }
   },
   typography: {
     h3: {

@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
   bluebutton: {
     ...theme.typography.bluebutton,
+    "&:hover": { background: theme.palette.common.titlegray },
     width: "8rem",
   },
   roundbutton: {
@@ -47,6 +48,16 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: "26px",
     textDecoration: "underline",
     margin: "1rem 0 .5rem",
+  },
+  lessontext: {
+    maxWidth: "35rem",
+  },
+  graybutton: {
+    backgroundColor: theme.palette.common.titlegray,
+    color: "white",
+    margin: ".5rem 1rem 0 0",
+    textTransform: "none",
+    width:'8rem'
   },
 }));
 
@@ -141,9 +152,18 @@ const Spaans = () => {
                 alt="lesson"
                 className={classes.lessonimage}
               />
+              <Grid item container justify="center" alignItems="center">
+                {material && index === lesson.index ? (
+                  <Button variant="contained" className={classes.graybutton}>
+                    Materiaal
+                  </Button>
+                ) : (
+                  ""
+                )}
+              </Grid>
             </Grid>
 
-            <Grid item sm={6} zeroMinWidth>
+            <Grid item md={8} sm={6} zeroMinWidth>
               <Grid container direction="column" spacing={3}>
                 <Grid item>
                   <Typography variant="h4">
@@ -297,29 +317,38 @@ const Spaans = () => {
                       </Grid>
                     </Grid>
                   ) : (
-                    <Typography variant="h6">{lesson.description}</Typography>
+                    <Typography variant="h6" className={classes.lessontext}>
+                      {lesson.description}
+                    </Typography>
                   )}
                 </Grid>
               </Grid>
             </Grid>
-
-            <Grid
-              item
-              sm
-              container
-              direction="column"
-              justify="flex-end"
-              alignItems="flex-end">
-              <Button
-                className={classes.bluebutton}
-                onClick={() => {
-                  setMaterial(!material);
-                  setIndex(lesson.index);
-                }}>
-                {material && index === lesson.index ? "Cancel" : "Kies Lessen"}
-              </Button>
-            </Grid>
           </Grid>
+        </Grid>
+        <Grid item sm container justify="flex-end" alignItems="flex-end">
+          {/* {material && index === lesson.index ? (
+            <>
+              {" "}
+              <Button variant="contained" className={classes.graybutton}>
+                Uitleg
+              </Button>
+              <Button variant="contained" className={classes.graybutton}>
+                Kies Lessen
+              </Button>
+            </>
+          ) : (
+            ""
+          )} */}
+
+          <Button
+            className={classes.bluebutton}
+            onClick={() => {
+              setMaterial(!material);
+              setIndex(lesson.index);
+            }}>
+            {material && index === lesson.index ? "Uitleg" : "Kies Lessen"}
+          </Button>
         </Grid>
       </Grid>
     </Paper>

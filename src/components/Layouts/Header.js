@@ -351,14 +351,15 @@ export default function Header(props) {
               <Grid item>
                 {signIn ? (
                   <Grid container justify="center" alignItems="center">
-                    <Grid item>
-                      <h6>Jonas</h6>
+                    <Grid item style={{ paddingRight: "1rem" }}>
+                      <Typography variant="h6">Jonas</Typography>
                     </Grid>
                     <Grid item>
                       <Badge
-                        color="error"
                         overlap="circle"
                         variant="dot"
+                        color="error"
+                        invisible={false}
                         anchorOrigin={{
                           vertical: "top",
                           horizontal: "right",
