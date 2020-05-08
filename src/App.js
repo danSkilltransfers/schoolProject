@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from "./components/Layouts/Header";
 import Footer from "./components/Layouts/Footer";
 import Spaans from "./components/Pages/Spaans";
+import Profil from "./components/Pages/Profil";
 
 import { ThemeProvider } from "@material-ui/styles";
 import theme from "./components/Theme";
@@ -30,12 +31,11 @@ function App() {
             path="/landing"
             component={() => <div style={{ minHeight: "100vh" }}>Landing</div>}
           />
+          <Route exact path="/mijn-profiel" component={() => <Profil />} />
           <Route
             exact
-            path="/mijn-profiel"
-            component={() => (
-              <div style={{ minHeight: "100vh" }}>Mijn Profiel</div>
-            )}
+            path="/calendar"
+            component={() => <div style={{ minHeight: "100vh" }}>Calendar</div>}
           />
           <Route
             exact

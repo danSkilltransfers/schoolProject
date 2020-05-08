@@ -170,15 +170,16 @@ export default function Header(props) {
   }
 
   const menuOptions = [
-    { name: "Spaans", link: "/spaans", activeIndex: 1, selectedIndex: 0 },
+    { name: "Spaans", link: "/spaans", activeIndex: 2, selectedIndex: 0 },
   ];
 
   const routes = [
     { name: "Mijn Profiel", link: "/mijn-profiel", activeIndex: 0 },
+    { name: "Calendar", link: "/calendar", activeIndex: 1 },
     {
       name: "Vakken",
       link: "/vakken",
-      activeIndex: 1,
+      activeIndex: 2,
       //ariaOwns identifies an element
       //anchorEl is an element inside the menu
       ariaOwns: anchorEl ? "courses-menu" : undefined,
@@ -186,8 +187,8 @@ export default function Header(props) {
       ariaHaspopup: anchorEl ? "true" : undefined,
       onMouseOver: (e) => handleClick(e),
     },
-    { name: "Onze Leraren", link: "/onze-leraren", activeIndex: 2 },
-    { name: "Onze Studenten", link: "/onze-studenten", activeIndex: 3 },
+    { name: "Onze Leraren", link: "/onze-leraren", activeIndex: 3 },
+    { name: "Onze Studenten", link: "/onze-studenten", activeIndex: 4 },
   ];
 
   const tabs = (

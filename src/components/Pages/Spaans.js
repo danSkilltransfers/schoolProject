@@ -327,7 +327,7 @@ const Spaans = () => {
           </Grid>
         </Grid>
         <Grid item sm container justify="flex-end" alignItems="flex-end">
-          {/* {material && index === lesson.index ? (
+          {material && index === lesson.index ? (
             <>
               {" "}
               <Button variant="contained" className={classes.graybutton}>
@@ -339,7 +339,7 @@ const Spaans = () => {
             </>
           ) : (
             ""
-          )} */}
+          )}
 
           <Button
             className={classes.bluebutton}
@@ -347,7 +347,7 @@ const Spaans = () => {
               setMaterial(!material);
               setIndex(lesson.index);
             }}>
-            {material && index === lesson.index ? "Uitleg" : "Kies Lessen"}
+            {material && index === lesson.index ? "Cancel" : "Kies Lessen"}
           </Button>
         </Grid>
       </Grid>
