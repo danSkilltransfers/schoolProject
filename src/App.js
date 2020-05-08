@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import Header from "./Layouts/Header";
-import Footer from "./Layouts/Footer";
-import Spaans from "./Pages/Spaans";
-import Profil from "./Pages/Profil";
-import Calendar from "./Pages/Calendar";
+import Header from "./layouts/header.js";
+import Footer from "./layouts/footer.js";
+import Spaans from "./pages/spaans.js";
+import Profil from "./pages/profil.js";
+import Calendar from "./pages/calendar.js";
 
 import { ThemeProvider } from "@material-ui/styles";
-import theme from "./Themes/Theme";
+import theme from "./themes/theme";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {

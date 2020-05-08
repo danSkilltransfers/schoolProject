@@ -75,8 +75,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.common.lightblue,
   },
   img: {
-    height: "100%",
-    width: "auto",
+    width: "80vw",
   },
 }));
 
@@ -92,10 +91,10 @@ const Calendar = () => {
         spacing={8}>
         <div className={classes.toolbarMargin} />
         <Grid item>
-          <img src={calendar} alt="calendar" className={classes.img}/>
+          <img src={calendar} alt="calendar" className={classes.img} />
         </Grid>
         <Grid item>
-          <img src={booking} alt="booking" className={classes.img}/>
+          <img src={booking} alt="booking" className={classes.img} />
         </Grid>
       </Grid>
       <div className={classes.toolbarMargin} />

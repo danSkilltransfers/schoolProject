@@ -86,7 +86,7 @@ const useStyles = makeStyles((theme) => ({
   },
   info: {
     height: "40rem",
-    width: "auto",
+    maxWidth: "90vw",
   },
 }));
 
@@ -162,7 +162,7 @@ const Spaans = () => {
   ];
 
   const Info = (
-    <Paper square={true} zeroMinWidth>
+    <Paper square={true}>
       <img src={info} alt="info" className={classes.info} />
     </Paper>
   );
