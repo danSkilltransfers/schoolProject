@@ -117,6 +117,12 @@ const Spaans = () => {
         "Leer Spaans in de lente! Of je je nu wilt voorbereiden op een reis naar Spanje of een ander Spaanstalig land, of je meer wilt verdiepen in de wereldtaal die deuren opent naar de cultuur van al die landen",
     },
   ];
+  const handleOpen = () => {
+    setMaterial(true);
+  };
+  const handleClose = () => {
+    if (material) setMaterial(false);
+  };
 
   const Chapter = chaptersData.map((lesson) => (
     <Paper className={classes.paper} square={true} key={`${lesson.index}`}>
@@ -344,8 +350,12 @@ const Spaans = () => {
           <Button
             className={classes.bluebutton}
             onClick={() => {
-              setMaterial(!material);
               setIndex(lesson.index);
+              if (material && index === lesson.index) {
+                handleClose();
+              } else {
+                handleOpen();
+              }
             }}>
             {material && index === lesson.index ? "Cancel" : "Kies Lessen"}
           </Button>

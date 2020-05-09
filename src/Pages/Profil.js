@@ -124,6 +124,7 @@ const Spaans = () => {
 
   const [material, setMaterial] = useState(false);
   const [index, setIndex] = useState(0);
+  const [color, setColor] = useState("");
 
   const chaptersData = [
     {
@@ -161,6 +162,13 @@ const Spaans = () => {
     },
   ];
 
+  const handleOpen = () => {
+    setMaterial(true);
+  };
+  const handleClose = () => {
+    if (material) setMaterial(false);
+  };
+
   const Info = (
     <Paper square={true}>
       <img src={info} alt="info" className={classes.info} />
@@ -180,8 +188,12 @@ const Spaans = () => {
               <Button
                 className={classes.underlinebutton}
                 onClick={() => {
-                  setMaterial(!material);
                   setIndex(lesson.index);
+                  if (material && index === lesson.index) {
+                    handleClose();
+                  } else {
+                    handleOpen();
+                  }
                 }}>
                 {material && index === lesson.index ? "See less" : "See more"}
               </Button>
@@ -328,14 +340,6 @@ const Spaans = () => {
       </Grid>
     </Paper>
   ));
-
-  // useEffect(() => {
-  //   chaptersData.forEach((lesson) => {
-  //     if (index !== lesson.index && material) {
-  //       setIndex(lesson.index);
-  //     }
-  //   });
-  // }, [index, material, chaptersData]);
 
   return (
     <Container className={classes.container}>
