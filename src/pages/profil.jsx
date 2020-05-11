@@ -7,7 +7,7 @@ import {
   ColorLinearProgress as Progress,
   CalendarButton,
   GrayButton,
-} from "../themes/components";
+} from "../themes/elements.styles";
 
 import lesson1 from "../assets/lesson/lesson1.png";
 import biology from "../assets/profile/biology.png";

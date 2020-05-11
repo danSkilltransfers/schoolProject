@@ -5,7 +5,7 @@ import {
   BigBlueRoundButton as LessonBtn,
   BlueButton,
   GrayButton,
-} from "../themes/components";
+} from "../themes/elements.styles";
 
 import shareIcon from "../assets/shareIcon.png";
 import lesson1 from "../assets/lesson/lesson1.png";

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Header from "./layouts/header.js";
-import Footer from "./layouts/footer.js";
-import Spaans from "./pages/spaans.js";
-import Profil from "./pages/profil.js";
-import Calendar from "./pages/calendar.js";
+import Header from "./layouts/header.jsx";
+import Footer from "./layouts/footer.jsx";
+import Spaans from "./pages/spaans.jsx";
+import Profil from "./pages/profil.jsx";
+import Calendar from "./pages/calendar.jsx";
 
 import { ThemeProvider } from "@material-ui/styles";
 import theme from "./themes/theme";

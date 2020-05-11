@@ -29,7 +29,7 @@ import {
 import {
   BigBlueRoundButton as SignInButton,
   BigBlueButton,
-} from "../themes/components";
+} from "../themes/elements.styles";
 
 import { makeStyles } from "@material-ui/styles";
 import { useTheme } from "@material-ui/core/styles";
