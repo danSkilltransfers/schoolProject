@@ -4,8 +4,9 @@ import { Container, Grid, Button, Paper, Typography } from "@material-ui/core";
 
 import {
   BlueRoundButton as LessonButton,
-  ColorLinearProgress,
+  ColorLinearProgress as Progress,
   CalendarButton,
+  GrayButton,
 } from "../themes/components";
 
 import lesson1 from "../assets/lesson/lesson1.png";
@@ -35,20 +36,6 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "-30px",
     [theme.breakpoints.down("md")]: { marginRight: "-10px" },
   },
-
-  bluebutton: {
-    ...theme.typography.bluebutton,
-    width: "8rem",
-    marginRight: ".5rem",
-  },
-  graybutton: {
-    backgroundColor: theme.palette.common.titlegray,
-    color: "white",
-    margin: ".5rem 1rem 0 0",
-    textTransform: "none",
-    width: "8rem",
-  },
-
   bluetext: {
     fontSize: "10px",
     lineHeight: "20px",
@@ -71,13 +58,6 @@ const useStyles = makeStyles((theme) => ({
   },
   lessontext: {
     maxWidth: "30rem",
-  },
-  progressbar: {
-    height: "10px",
-    maxWidth: "30rem",
-    borderRadius: "21px",
-    backgroundColor: theme.palette.common.titlegray,
-    color: theme.palette.common.lightblue,
   },
   info: {
     height: "40rem",
@@ -232,11 +212,7 @@ const Spaans = () => {
                 </Grid>
 
                 <Grid item>
-                  <ColorLinearProgress
-                    className={classes.progressbar}
-                    variant="determinate"
-                    value={lesson.progress}
-                  />
+                  <Progress variant="determinate" value={lesson.progress} />
                 </Grid>
                 <Grid
                   item
@@ -249,7 +225,7 @@ const Spaans = () => {
               </Grid>
             </Grid>
             {material && index === lesson.index ? (
-              <Grid container direction="column" style={{padding:".5rem"}}>
+              <Grid container direction="column" style={{ padding: ".5rem" }}>
                 <Grid item>
                   {/*  <Typography className={classes.activity}>
                     Actividades Vocabulario
@@ -308,15 +284,11 @@ const Spaans = () => {
                       </Grid>
 
                       <Grid item>
-                        <Grid container spacing={2} justify="space-between">
-                          <Grid item>
-                            <Button className={classes.graybutton}>
-                              Evaluatie
-                            </Button>
+                        <Grid  container spacing={2} justify="space-between">
+                          <Grid item >
+                            <GrayButton>Evaluatie</GrayButton>
 
-                            <Button className={classes.graybutton}>
-                              Hoofdstukken
-                            </Button>
+                            <GrayButton>Hoofdstukken</GrayButton>
                           </Grid>
 
                           <Grid item className={classes.smallbluetext}>

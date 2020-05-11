@@ -26,7 +26,10 @@ import {
   Avatar,
 } from "@material-ui/core";
 
-import { BigBlueRoundButton as SignInButton } from "../themes/components";
+import {
+  BigBlueRoundButton as SignInButton,
+  BigBlueButton,
+} from "../themes/components";
 
 import { makeStyles } from "@material-ui/styles";
 import { useTheme } from "@material-ui/core/styles";
@@ -89,7 +92,6 @@ const useStyles = makeStyles((theme) => ({
     ...theme.typography.roundbutton,
     [theme.breakpoints.down("xs")]: { padding: "2px 8px", marginLeft: "-1rem" },
   },
-  avatarText: {},
   avatar: {
     width: "3.5rem",
     height: "3.5rem",
@@ -104,14 +106,6 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     height: "4rem",
     borderRadius: "3px",
-  },
-  bluebutton: {
-    ...theme.typography.bluebutton,
-    width: "10rem",
-    height: "4rem",
-    fontFamily: "Poppins",
-    fontWeight: "500",
-    fontSize: "20px",
   },
   languagecontainer: {
     position: "absolute",
@@ -435,9 +429,7 @@ export default function Header(props) {
                           />
                         </Grid>
                         <Grid item sm={4}>
-                          <Button className={classes.bluebutton}>
-                            Find Your Skill
-                          </Button>
+                          <BigBlueButton>Find Your Skill</BigBlueButton>
                         </Grid>
                       </Grid>
                     </Grid>

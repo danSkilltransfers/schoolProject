@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Grid, Button, Paper, Typography } from "@material-ui/core";
-import { BigBlueRoundButton as LessonBtn } from "../themes/components";
+import {
+  BigBlueRoundButton as LessonBtn,
+  BlueButton,
+  GrayButton,
+} from "../themes/components";
 
 import shareIcon from "../assets/shareIcon.png";
 import lesson1 from "../assets/lesson/lesson1.png";
@@ -30,11 +34,7 @@ const useStyles = makeStyles((theme) => ({
     height: "14rem",
     width: "auto",
   },
-  bluebutton: {
-    ...theme.typography.bluebutton,
-    "&:hover": { background: theme.palette.common.titlegray },
-    width: "8rem",
-  },
+
   smallbluetext: {
     ...theme.typography.smallbluetext,
     textDecoration: "underline",
@@ -42,7 +42,6 @@ const useStyles = makeStyles((theme) => ({
 
   activity: {
     color: theme.palette.common.titlegray,
-    fontFamily: "Roboto",
     fontSize: "22px",
     lineHeight: "26px",
     textDecoration: "underline",
@@ -52,16 +51,15 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "35rem",
   },
   graybutton: {
-    backgroundColor: theme.palette.common.titlegray,
-    color: "white",
-    margin: ".5rem 1rem 0 0",
-    textTransform: "none",
-    width: "8rem",
+    [theme.breakpoints.down("xs")]: { width: "auto" },
   },
-  share:{
+  share: {
     marginLeft: "-27px",
     [theme.breakpoints.down("md")]: { marginLeft: 0 },
-  }
+  },
+  bluebutton: {
+    [theme.breakpoints.down("xs")]: { width: "auto" },
+  },
 }));
 
 const Spaans = () => {
@@ -163,9 +161,9 @@ const Spaans = () => {
               />
               <Grid item container justify="center" alignItems="center">
                 {material && index === lesson.index ? (
-                  <Button variant="contained" className={classes.graybutton}>
+                  <GrayButton className={classes.graybutton}>
                     Materiaal
-                  </Button>
+                  </GrayButton>
                 ) : (
                   ""
                 )}
@@ -247,22 +245,26 @@ const Spaans = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item sm container justify="flex-end" alignItems="flex-end">
+        <Grid
+          item
+          container
+          justify-sm-flex-start
+          justify="flex-end"
+          alignItems="flex-end"
+          xs={12}>
           {material && index === lesson.index ? (
             <>
               {" "}
-              <Button variant="contained" className={classes.graybutton}>
-                Uitleg
-              </Button>
-              <Button variant="contained" className={classes.graybutton}>
+              <GrayButton className={classes.graybutton}>Uitleg</GrayButton>
+              <GrayButton className={classes.graybutton}>
                 Kies Lessen
-              </Button>
+              </GrayButton>
             </>
           ) : (
             ""
           )}
 
-          <Button
+          <BlueButton
             className={classes.bluebutton}
             onClick={() => {
               setIndex(lesson.index);
@@ -273,7 +275,7 @@ const Spaans = () => {
               }
             }}>
             {material && index === lesson.index ? "Cancel" : "Kies Lessen"}
-          </Button>
+          </BlueButton>
         </Grid>
       </Grid>
     </Paper>

@@ -4,11 +4,11 @@ import { Button, LinearProgress } from "@material-ui/core";
 import {
   Blue,
   LightBlue,
-  DarkBlue,
-  Green,
+  // DarkBlue,
+  // Green,
   White,
-  ChapterText,
-  Black,
+  // ChapterText,
+  // Black,
   TitleGray,
   ProgressGray,
 } from "./theme";
@@ -24,6 +24,25 @@ export const BlueRoundButton = withStyles({
     textTransform: "none",
     margin: ".5rem",
     fontWeight: "300",
+    "&:hover": {
+      color: `${White}`,
+      backgroundColor: ` ${LightBlue}`,
+    },
+    "&:active": {
+      color: `${White}`,
+      backgroundColor: `${LightBlue}`,
+    },
+  },
+})(Button);
+
+export const GrayButton = withStyles({
+  root: {
+    background: `${TitleGray}`,
+    color: `${White}`,
+    margin: ".5rem .5rem  0 0",
+    textTransform: "none",
+    width: "8rem",
+
     "&:hover": {
       color: `${White}`,
       backgroundColor: ` ${LightBlue}`,
@@ -51,7 +70,12 @@ export const CalendarButton = withStyles({
 })(Button);
 
 export const ColorLinearProgress = withStyles({
-  colorPrimary: {
+  root:{
+     height: "10px",
+  maxWidth: "30rem",
+  borderRadius: "21px",
+  },
+   colorPrimary: {
     backgroundColor: `${ProgressGray}`,
   },
   barColorPrimary: {
@@ -67,3 +91,30 @@ export const BigBlueRoundButton = withStyles({
     lineHeight: "21px",
   },
 })(BlueRoundButton);
+export const BlueButton = withStyles({
+  root: {
+    background: `${LightBlue}`,
+    "&:hover": { background: `${TitleGray}` },
+    borderRadius: "3px",
+    textTransform: "none",
+    color: `${White}`,
+    width: "8rem",
+  },
+})(Button);
+
+//header
+
+export const BigBlueButton = withStyles({
+  root: {
+    background: `${LightBlue}`,
+    "&:hover": { background: `${LightBlue}` },
+    borderRadius: "3px",
+    textTransform: "none",
+    color: `${White}`,
+    width: "10rem",
+    height: "4rem",
+    fontFamily: "Poppins",
+    fontWeight: "500",
+    fontSize: "20px",
+  },
+})(Button);
