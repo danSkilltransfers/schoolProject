@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
+import { Container, Grid, Button, Paper, Typography } from "@material-ui/core";
+
 import {
-  Container,
-  Grid,
-  Button,
-  Paper,
-  Typography,
-  LinearProgress,
-} from "@material-ui/core";
+  BlueRoundButton as LessonButton,
+  ColorLinearProgress,
+  CalendarButton,
+} from "../themes/components";
 
 import lesson1 from "../assets/lesson/lesson1.png";
 import biology from "../assets/profile/biology.png";
@@ -21,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     margin: "0 auto 1rem auto",
     padding: "1rem 2.5rem",
+    [theme.breakpoints.down("md")]: { padding: "1rem 1rem" },
   },
   lessonimage: {
     height: "7rem",
@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "underline",
     color: theme.palette.common.titlegray,
     marginRight: "-30px",
+    [theme.breakpoints.down("md")]: { marginRight: "-10px" },
   },
 
   bluebutton: {
@@ -40,18 +41,12 @@ const useStyles = makeStyles((theme) => ({
     width: "8rem",
     marginRight: ".5rem",
   },
-
-  calendarbutton: {
-    borderRadius: "17px",
-    borderColor: theme.palette.common.blue,
-    height: "16px",
-    width: "104px",
-    padding: 0,
-    fontSize: "8px",
+  graybutton: {
+    backgroundColor: theme.palette.common.titlegray,
     color: "white",
-    textDecoration: "underline",
-    backgroundColor: theme.palette.common.blue,
-    "&:hover": { backgroundColor: theme.palette.common.blue },
+    margin: ".5rem 1rem 0 0",
+    textTransform: "none",
+    width: "8rem",
   },
 
   bluetext: {
@@ -90,75 +85,72 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ColorLinearProgress = withStyles({
-  colorPrimary: {
-    backgroundColor: "#E5E5E5",
-  },
-  barColorPrimary: {
-    backgroundColor: "#0AB5FE",
-  },
-})(LinearProgress);
-
-const LessonButton = withStyles({
-  root: {
-    border: `1px solid #0AB5FE`,
-    borderRadius: "40px",
-    backgroundColor: `#FFFFFF`,
-    padding: "2px 8px",
-    color: `#0AB5FE`,
-    textTransform: "none",
-    margin: ".5rem",
-    "&:hover": {
-      color: `#FFFFFF`,
-      backgroundColor: `#0AB5FE`,
-    },
-    "&:active": {
-      color: `#FFFFFF`,
-      backgroundColor: `#0AB5FE`,
-    },
-  },
-})(Button);
-
 const Spaans = () => {
   const classes = useStyles();
 
   const [material, setMaterial] = useState(false);
   const [index, setIndex] = useState(0);
-  const [color, setColor] = useState("");
 
   const chaptersData = [
     {
       index: 0,
       date: "31st/ Sept /2020",
       image: lesson1,
-      name: "Hoofdstuk 1: ¡Hola!",
+      chapter: "Hoofdstuk 1: ¡Hola!",
       description:
         "Leer Spaans in de lente! Of je je nu wilt voorbereiden op een reis naar Spanje of een ander Spaanstalig land, of je meer wilt verdiepen in de wereldtaal die deuren opent naar de cultuur van al die landen",
       progress: 10,
-      activities: "01/20 activities",
+      left: "01/20 activities",
       course: "Spaans",
     },
     {
       index: 1,
       date: "31st/ June /2020",
       image: biology,
-      name: "Hoofdstuk 2: De cel",
+      chapter: "Hoofdstuk 2: De cel",
       description:
         "Lorem ipsum dolor sit amet consectetur adipiscing elit, velit phasellus ultricies montes augue aliquam curabitur, hendrerit sociis purus fames libero eleifend.",
       progress: 25,
-      activities: "01/05 activities",
+      left: "01/05 activities",
       course: "Biologie",
     },
     {
       index: 2,
       date: "31st/ July /2020",
       image: precalculus,
-      name: "Hoofdstuk 3: Calculus",
+      chapter: "Hoofdstuk 3: Calculus",
       description:
         "Lorem ipsum dolor sit amet consectetur adipiscing elit, velit phasellus ultricies montes augue aliquam curabitur, hendrerit sociis purus fames libero eleifend.",
       progress: 20,
-      activities: "01/06 activities",
+      left: "01/06 activities",
       course: "Wiskunde",
+    },
+  ];
+
+  const exercises = [
+    {
+      chapter: "Chapter1: Hola",
+      section: "Actividades Vocabulario",
+      name: "Exercise 1",
+      number: "1",
+    },
+    {
+      chapter: "Chapter1: Hola",
+      section: "Actividades Gramática",
+      name: "Exercise 2",
+      number: "2",
+    },
+    {
+      chapter: "Chapter1: Hola",
+      section: "Actividades Comunicación",
+      name: "Exercise 3",
+      number: "3",
+    },
+    {
+      chapter: "Chapter1: Hola",
+      section: "Actividades Reflexión y evaluación",
+      name: "Exercise 4",
+      number: "4",
     },
   ];
 
@@ -218,9 +210,7 @@ const Spaans = () => {
                 </Grid>
 
                 <Grid item container justify="center" alignItems="center">
-                  <Button variant="outlined" className={classes.calendarbutton}>
-                    Check Calendar
-                  </Button>
+                  <CalendarButton>Check Calendar</CalendarButton>
                 </Grid>
               </Grid>
             </Grid>
@@ -233,7 +223,7 @@ const Spaans = () => {
                 className={classes.lessontext}>
                 <Grid item>
                   <Typography variant="h4">
-                    <u>{lesson.name}</u>
+                    <u>{lesson.chapter}</u>
                   </Typography>
                 </Grid>
 
@@ -253,14 +243,23 @@ const Spaans = () => {
                   container
                   justify="space-between"
                   className={classes.bluetext}>
-                  <Typography>{lesson.activities}</Typography>
+                  <Typography>{lesson.left}</Typography>
                   <Typography>{lesson.course}</Typography>
                 </Grid>
               </Grid>
             </Grid>
             {material && index === lesson.index ? (
-              <Grid container direction="column">
+              <Grid container direction="column" style={{padding:".5rem"}}>
                 <Grid item>
+                  {/*  <Typography className={classes.activity}>
+                    Actividades Vocabulario
+                  </Typography>
+
+                  {myButtons.forEach((i) => (
+                    <LessonButton>Button {myButtons.contens} </LessonButton>
+
+                  ))} */}
+
                   <Typography className={classes.activity}>
                     Actividades Vocabulario
                   </Typography>
@@ -273,7 +272,6 @@ const Spaans = () => {
                     <LessonButton>Ejercicio 10</LessonButton>
                     <LessonButton>Ejercicio 11</LessonButton>
                   </Grid>
-
                   <Grid item>
                     <Typography className={classes.activity}>
                       Actividades Gramática
@@ -287,7 +285,6 @@ const Spaans = () => {
                       <LessonButton>Ejercicio 7</LessonButton>
                     </Grid>
                   </Grid>
-
                   <Grid item>
                     <Typography className={classes.activity}>
                       Actividades Comunicación
@@ -313,11 +310,11 @@ const Spaans = () => {
                       <Grid item>
                         <Grid container spacing={2} justify="space-between">
                           <Grid item>
-                            <Button className={classes.bluebutton}>
+                            <Button className={classes.graybutton}>
                               Evaluatie
                             </Button>
 
-                            <Button className={classes.bluebutton}>
+                            <Button className={classes.graybutton}>
                               Hoofdstukken
                             </Button>
                           </Grid>

@@ -25,6 +25,9 @@ import {
   Badge,
   Avatar,
 } from "@material-ui/core";
+
+import { BigBlueRoundButton as SignInButton } from "../themes/components";
+
 import { makeStyles } from "@material-ui/styles";
 import { useTheme } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -112,8 +115,8 @@ const useStyles = makeStyles((theme) => ({
   },
   languagecontainer: {
     position: "absolute",
-    right: "4vw",
-    [theme.breakpoints.down("md")]: { right: "3vw", width: "24px" },
+    right: "3vw",
+    [theme.breakpoints.down("md")]: { right: "2vw", width: "24px" },
     [theme.breakpoints.down("sm")]: { right: "3vw" },
     [theme.breakpoints.down("xs")]: { right: "1vw" },
   },
@@ -374,12 +377,11 @@ export default function Header(props) {
                     </Grid>
                   </Grid>
                 ) : (
-                  <Button
+                  <SignInButton
                     className={classes.signinbutton}
-                    variant="outlined"
                     onClick={() => setSignIn(true)}>
                     Sign In
-                  </Button>
+                  </SignInButton>
                 )}
               </Grid>
               <Grid item className={classes.languagecontainer}>

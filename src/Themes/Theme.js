@@ -1,13 +1,14 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 
-const Blue = "#2176a7";
-const LightBlue = "#0ab5fe";
-const DarkBlue = "#1A5E86";
-const Green = "#21c3b5";
-const White = "#ffffff";
-const ChapterText = "#666A6A";
-const Black = "rgba(0, 0, 0, 0.5)";
-const TitleGray = "#C4C4C4";
+export const Blue = "#2176a7";
+export const LightBlue = "#0ab5fe";
+export const DarkBlue = "#1A5E86";
+export const Green = "#21c3b5";
+export const White = "#ffffff";
+export const ChapterText = "#666A6A";
+export const Black = "rgba(0, 0, 0, 0.5)";
+export const TitleGray = "#C4C4C4";
+export const ProgressGray = "#C4C4C4";
 
 const BannerBlue =
   "linear-gradient(136.88deg, #2176A7 41.34%, #0AB5FE 102.25%)";
@@ -49,7 +50,6 @@ export default createMuiTheme({
       lineHeight: "30px",
     },
     h6: {
-      fontFamily: "Roboto",
       fontWeight: "300",
       fontSize: "18px",
       lineHeight: "21px",
@@ -64,18 +64,7 @@ export default createMuiTheme({
     textDescription: {
       padding: "3rem 0 0 5rem",
     },
-    roundbutton: {
-      border: `1px solid ${LightBlue}`,
-      borderRadius: "40px",
-      backgroundColor: `${White}`,
-      padding: "4px 16px",
-      color: `${LightBlue}`,
-      textTransform: "none",
-      "&:hover": {
-        color: `${White}`,
-        backgroundColor: `${LightBlue}`,
-      },
-    },
+
     bluebutton: {
       background: `${LightBlue}`,
       "&:hover": { background: `${LightBlue}` },

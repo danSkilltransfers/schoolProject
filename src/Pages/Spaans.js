@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Grid, Button, Paper, Typography } from "@material-ui/core";
+import { BigBlueRoundButton as LessonBtn } from "../themes/components";
 
 import shareIcon from "../assets/shareIcon.png";
 import lesson1 from "../assets/lesson/lesson1.png";
@@ -16,10 +17,14 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.common.chaptertext,
     [theme.breakpoints.down("md")]: { paddingLeft: 0 },
   },
+  toolbarMargin: {
+    ...theme.mixins.toolbar,
+  },
   paper: {
     maxWidth: 1000,
     margin: "1rem auto",
     padding: "1rem 2.5rem",
+    [theme.breakpoints.down("md")]: { padding: "1rem 1rem" },
   },
   lessonimage: {
     height: "14rem",
@@ -30,17 +35,11 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": { background: theme.palette.common.titlegray },
     width: "8rem",
   },
-  roundbutton: {
-    ...theme.typography.roundbutton,
-    margin: ".5rem",
-  },
   smallbluetext: {
     ...theme.typography.smallbluetext,
     textDecoration: "underline",
   },
-  toolbarMargin: {
-    ...theme.mixins.toolbar,
-  },
+
   activity: {
     color: theme.palette.common.titlegray,
     fontFamily: "Roboto",
@@ -59,6 +58,10 @@ const useStyles = makeStyles((theme) => ({
     textTransform: "none",
     width: "8rem",
   },
+  share:{
+    marginLeft: "-27px",
+    [theme.breakpoints.down("md")]: { marginLeft: 0 },
+  }
 }));
 
 const Spaans = () => {
@@ -135,7 +138,7 @@ const Spaans = () => {
             alignItems="center">
             <Grid item>
               <Grid container spacing={1} justify="center" alignItems="center">
-                <Grid item style={{ marginLeft: "-27px" }}>
+                <Grid item className={classes.share}>
                   <img src={shareIcon} alt="shareIcon" />
                 </Grid>
                 <Grid item>
@@ -185,36 +188,12 @@ const Spaans = () => {
                           Actividades Vocabulario
                         </Typography>
                         <Grid item container spacing={2}>
-                          <Button
-                            variant="outlined"
-                            className={classes.roundbutton}>
-                            <Typography variant="h6">Ejercicio 1</Typography>
-                          </Button>
-                          <Button
-                            variant="outlined"
-                            className={classes.roundbutton}>
-                            <Typography variant="h6">Ejercicio 3</Typography>
-                          </Button>
-                          <Button
-                            variant="outlined"
-                            className={classes.roundbutton}>
-                            <Typography variant="h6">Ejercicio 7</Typography>
-                          </Button>
-                          <Button
-                            variant="outlined"
-                            className={classes.roundbutton}>
-                            <Typography variant="h6">Ejercicio 9</Typography>
-                          </Button>
-                          <Button
-                            variant="outlined"
-                            className={classes.roundbutton}>
-                            <Typography variant="h6">Ejercicio 10</Typography>
-                          </Button>
-                          <Button
-                            variant="outlined"
-                            className={classes.roundbutton}>
-                            <Typography variant="h6">Ejercicio 11</Typography>
-                          </Button>
+                          <LessonBtn>Ejercicio 1</LessonBtn>
+                          <LessonBtn>Ejercicio 3</LessonBtn>
+                          <LessonBtn>Ejercicio 7</LessonBtn>
+                          <LessonBtn>Ejercicio 9</LessonBtn>
+                          <LessonBtn>Ejercicio 10</LessonBtn>
+                          <LessonBtn>Ejercicio 11</LessonBtn>
                         </Grid>
 
                         <Grid item>
@@ -222,36 +201,11 @@ const Spaans = () => {
                             Actividades Gramática
                           </Typography>
                           <Grid item container spacing={2}>
-                            <Button
-                              variant="outlined"
-                              className={classes.roundbutton}>
-                              <Typography variant="h6">Ejercicio 1</Typography>
-                            </Button>
-                            <Button
-                              variant="outlined"
-                              className={classes.roundbutton}>
-                              <Typography variant="h6">Ejercicio 3</Typography>
-                            </Button>
-                            <Button
-                              variant="outlined"
-                              className={classes.roundbutton}>
-                              <Typography variant="h6">Ejercicio 4</Typography>
-                            </Button>
-                            <Button
-                              variant="outlined"
-                              className={classes.roundbutton}>
-                              <Typography variant="h6">Ejercicio 5</Typography>
-                            </Button>
-                            <Button
-                              variant="outlined"
-                              className={classes.roundbutton}>
-                              <Typography variant="h6">Ejercicio 6</Typography>
-                            </Button>
-                            <Button
-                              variant="outlined"
-                              className={classes.roundbutton}>
-                              <Typography variant="h6">Ejercicio 7</Typography>
-                            </Button>
+                            <LessonBtn>Ejercicio 1</LessonBtn>
+                            <LessonBtn>Ejercicio 3</LessonBtn>
+                            <LessonBtn>Ejercicio 4</LessonBtn>
+                            <LessonBtn>Ejercicio 5</LessonBtn>
+                            <LessonBtn>Ejercicio 6</LessonBtn>
                           </Grid>
                         </Grid>
 
@@ -260,63 +214,24 @@ const Spaans = () => {
                             Actividades Comunicación
                           </Typography>
                           <Grid item container spacing={2}>
-                            <Button
-                              variant="outlined"
-                              className={classes.roundbutton}>
-                              <Typography variant="h6">Ejercicio 4</Typography>
-                            </Button>
-                            <Button
-                              variant="outlined"
-                              className={classes.roundbutton}>
-                              <Typography variant="h6">Ejercicio 6</Typography>
-                            </Button>
-                            <Button
-                              variant="outlined"
-                              className={classes.roundbutton}>
-                              <Typography variant="h6">Ejercicio 8</Typography>
-                            </Button>
+                            <LessonBtn>Ejercicio 4</LessonBtn>
+                            <LessonBtn>Ejercicio 6</LessonBtn>
+                            <LessonBtn>Ejercicio 7</LessonBtn>
+                            <LessonBtn>Ejercicio 8</LessonBtn>
                           </Grid>
 
                           <Grid item>
                             <Typography className={classes.activity}>
                               Actividades Reflexión y evaluación
                             </Typography>
-                            <Grid item container>
-                              <Button
-                                variant="outlined"
-                                className={classes.roundbutton}>
-                                <Typography variant="h6">
-                                  Ejercicio 1
-                                </Typography>
-                              </Button>
-                              <Button
-                                variant="outlined"
-                                className={classes.roundbutton}>
-                                <Typography variant="h6">
-                                  Ejercicio 2
-                                </Typography>
-                              </Button>
-                              <Button
-                                variant="outlined"
-                                className={classes.roundbutton}>
-                                <Typography variant="h6">
-                                  Ejercicio 3
-                                </Typography>
-                              </Button>
-                              <Button
-                                variant="outlined"
-                                className={classes.roundbutton}>
-                                <Typography variant="h6">
-                                  Ejercicio 4
-                                </Typography>
-                              </Button>
-                              <Button
-                                variant="outlined"
-                                className={classes.roundbutton}>
-                                <Typography variant="h6">
-                                  Ejercicio 5
-                                </Typography>
-                              </Button>
+
+                            <Grid item container spacing={2}>
+                              {" "}
+                              <LessonBtn>Ejercicio 1</LessonBtn>
+                              <LessonBtn>Ejercicio 2</LessonBtn>
+                              <LessonBtn>Ejercicio 3</LessonBtn>
+                              <LessonBtn>Ejercicio 4</LessonBtn>
+                              <LessonBtn>Ejercicio 5</LessonBtn>
                             </Grid>
                           </Grid>
                         </Grid>
