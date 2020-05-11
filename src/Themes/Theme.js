@@ -64,20 +64,5 @@ export default createMuiTheme({
     textDescription: {
       padding: "3rem 0 0 5rem",
     },
-
-    bluebutton: {
-      background: `${LightBlue}`,
-      "&:hover": { background: `${LightBlue}` },
-      borderRadius: "3px",
-      textTransform: "none",
-      color: `${White}`,
-    },
-    smallbluetext: {
-      fontFamily: "Poppins",
-      fontSize: "10px",
-      lineHeight: "15px",
-      color: `${LightBlue}`,
-      textAlign: "right",
-    },
   },
 });

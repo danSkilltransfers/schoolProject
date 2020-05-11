@@ -1,5 +1,5 @@
 import { withStyles } from "@material-ui/core/styles";
-import { Button, LinearProgress } from "@material-ui/core";
+import { Button, LinearProgress, Typography } from "@material-ui/core";
 
 import {
   Blue,
@@ -34,6 +34,17 @@ export const BlueRoundButton = withStyles({
     },
   },
 })(Button);
+export const SmallBlueText = withStyles({
+  root: {
+    fontFamily: "Poppins",
+    fontSize: "10px",
+    lineHeight: "15px",
+    color: `${LightBlue}`,
+    textAlign: "right",
+    margin:".5rem",
+    textDecoration: "underline",
+  },
+})(Typography);
 
 export const GrayButton = withStyles({
   root: {
@@ -70,12 +81,12 @@ export const CalendarButton = withStyles({
 })(Button);
 
 export const ColorLinearProgress = withStyles({
-  root:{
-     height: "10px",
-  maxWidth: "30rem",
-  borderRadius: "21px",
+  root: {
+    height: "10px",
+    maxWidth: "30rem",
+    borderRadius: "21px",
   },
-   colorPrimary: {
+  colorPrimary: {
     backgroundColor: `${ProgressGray}`,
   },
   barColorPrimary: {

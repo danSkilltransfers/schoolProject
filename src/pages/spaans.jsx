@@ -5,6 +5,7 @@ import {
   BigBlueRoundButton as LessonBtn,
   BlueButton,
   GrayButton,
+  SmallBlueText,
 } from "../themes/elements.styles";
 
 import shareIcon from "../assets/shareIcon.png";
@@ -34,12 +35,6 @@ const useStyles = makeStyles((theme) => ({
     height: "14rem",
     width: "auto",
   },
-
-  smallbluetext: {
-    ...theme.typography.smallbluetext,
-    textDecoration: "underline",
-  },
-
   activity: {
     color: theme.palette.common.titlegray,
     fontSize: "22px",
@@ -144,9 +139,11 @@ const Spaans = () => {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item className={classes.smallbluetext}>
-              Hoofdstuk verschuldigd voor: <br />
-              {lesson.date}
+            <Grid item>
+              <SmallBlueText>
+                Hoofdstuk verschuldigd voor: <br />
+                {lesson.date}
+              </SmallBlueText>
             </Grid>
           </Grid>
         </Grid>
@@ -161,9 +158,9 @@ const Spaans = () => {
               />
               <Grid item container justify="center" alignItems="center">
                 {material && index === lesson.index ? (
-                  <GrayButton className={classes.graybutton}>
+                  <BlueButton className={classes.graybutton}>
                     Materiaal
-                  </GrayButton>
+                  </BlueButton>
                 ) : (
                   ""
                 )}

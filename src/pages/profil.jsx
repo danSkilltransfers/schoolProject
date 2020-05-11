@@ -7,6 +7,7 @@ import {
   ColorLinearProgress as Progress,
   CalendarButton,
   GrayButton,
+  SmallBlueText,
 } from "../themes/elements.styles";
 
 import lesson1 from "../assets/lesson/lesson1.png";
@@ -42,10 +43,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "300",
     color: theme.palette.common.lightblue,
   },
-  smallbluetext: {
-    ...theme.typography.smallbluetext,
-    textDecoration: "underline",
-  },
+
   toolbarMargin: {
     ...theme.mixins.toolbar,
   },
@@ -87,7 +85,7 @@ const Spaans = () => {
       index: 1,
       date: "31st/ June /2020",
       image: biology,
-      chapter: "Hoofdstuk 2: De cel",
+      chapter: "Hoofdstuk 1: De cel",
       description:
         "Lorem ipsum dolor sit amet consectetur adipiscing elit, velit phasellus ultricies montes augue aliquam curabitur, hendrerit sociis purus fames libero eleifend.",
       progress: 25,
@@ -98,7 +96,7 @@ const Spaans = () => {
       index: 2,
       date: "31st/ July /2020",
       image: precalculus,
-      chapter: "Hoofdstuk 3: Calculus",
+      chapter: "Hoofdstuk 2: Calculus",
       description:
         "Lorem ipsum dolor sit amet consectetur adipiscing elit, velit phasellus ultricies montes augue aliquam curabitur, hendrerit sociis purus fames libero eleifend.",
       progress: 20,
@@ -284,16 +282,18 @@ const Spaans = () => {
                       </Grid>
 
                       <Grid item>
-                        <Grid  container spacing={2} justify="space-between">
-                          <Grid item >
+                        <Grid container spacing={2} justify="space-between">
+                          <Grid item>
                             <GrayButton>Evaluatie</GrayButton>
 
                             <GrayButton>Hoofdstukken</GrayButton>
                           </Grid>
 
-                          <Grid item className={classes.smallbluetext}>
-                            Hoofdstuk verschuldigd voor: <br />
-                            {lesson.date}
+                          <Grid item>
+                            <SmallBlueText>
+                              Hoofdstuk verschuldigd voor: <br />
+                              {lesson.date}
+                            </SmallBlueText>
                           </Grid>
                         </Grid>
                       </Grid>
