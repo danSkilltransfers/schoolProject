@@ -8,7 +8,7 @@ export const White = "#ffffff";
 export const ChapterText = "#666A6A";
 export const Black = "rgba(0, 0, 0, 0.5)";
 export const TitleGray = "#C4C4C4";
-export const ProgressGray = "#C4C4C4";
+
 
 const BannerBlue =
   "linear-gradient(136.88deg, #2176A7 41.34%, #0AB5FE 102.25%)";

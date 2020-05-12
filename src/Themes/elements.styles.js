@@ -10,7 +10,7 @@ import {
   // ChapterText,
   // Black,
   TitleGray,
-  ProgressGray,
+ 
 } from "./theme";
 
 //profil page
@@ -87,7 +87,7 @@ export const ColorLinearProgress = withStyles({
     borderRadius: "21px",
   },
   colorPrimary: {
-    backgroundColor: `${ProgressGray}`,
+    backgroundColor: `${TitleGray}`,
   },
   barColorPrimary: {
     backgroundColor: `${LightBlue}`,

@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Grid, Button, Paper, Typography } from "@material-ui/core";
 
@@ -61,14 +61,24 @@ const useStyles = makeStyles((theme) => ({
     height: "40rem",
     maxWidth: "90vw",
   },
+  blue: {
+    color: "white",
+    backgroundColor: theme.palette.common.lightblue,
+  },
+  gray: {
+    color: theme.palette.common.titlegray,
+    border: `1px solid ${theme.palette.common.titlegray}`,
+  },
 }));
 
 const Profil = () => {
   const classes = useStyles();
 
   const [material, setMaterial] = useState(false);
-  const [index, setIndex] = useState(0);
-  const [selected,setSelected]=useState(false);
+  const [lessonIndex, setLessonIndex] = useState(0);
+  const [active, setActive] = useState(false);
+  const [buttonIndex, setButtonIndex] = useState(0);
+  const [clicked, setClicked] = useState(false);
 
   const chaptersData = [
     {
@@ -617,13 +627,23 @@ const Profil = () => {
 
   const handleOpen = () => {
     setMaterial(true);
+    setActive(false);
+    setClicked(false)
   };
   const handleClose = () => {
+    setClicked(false)
     if (material) setMaterial(false);
   };
   const buttonClick = () => {
-    setSelected(false);
+    setActive(true);
+    setClicked(true);
   };
+  // const buttonColor = () => {
+  //   if (myButtons.active === active) {
+  //     setColor();
+  //   } else {
+  //   }
+  // };
 
   const Info = (
     <Paper square={true}>
@@ -644,14 +664,16 @@ const Profil = () => {
               <Button
                 className={classes.underlinebutton}
                 onClick={() => {
-                  setIndex(lesson.index);
-                  if (material && index === lesson.index) {
+                  setLessonIndex(lesson.index);
+                  if (material && lessonIndex === lesson.index) {
                     handleClose();
                   } else {
                     handleOpen();
                   }
                 }}>
-                {material && index === lesson.index ? "See less" : "See more"}
+                {material && lessonIndex === lesson.index
+                  ? "See less"
+                  : "See more"}
               </Button>
             </Grid>
           </Grid>
@@ -708,7 +730,7 @@ const Profil = () => {
                 </Grid>
               </Grid>
             </Grid>
-            {material && index === lesson.index ? (
+            {material && lessonIndex === lesson.index ? (
               <Grid container direction="column" style={{ padding: ".5rem" }}>
                 <Grid item>
                   {exercises.map((option) => (
@@ -719,19 +741,27 @@ const Profil = () => {
                         {option.section}
                       </Typography>
                       <Grid item container spacing={2}>
-                        {myButtons.map((item) =>
+                        {myButtons.map((item, index) =>
                           !item.disabled && option.section === item.section ? (
                             <LessonButton
-                              key={`${item.section}${item.name}${item.id}`}
-                              selected={selected}
+                              key={index}
                               // section={item.section}
                               // id={item.id}
                               // name={item.name}
                               // disabled={item.disabled}
-                              // active={item.active}
+                              active={active}
                               // completed={item.completed}
-                              // onClick={setSelected(true)}
-                              >
+                              onClick={() => {
+                                buttonClick();
+                                setButtonIndex(index);
+                              }}
+                              className={
+                                active && index === buttonIndex
+                                  ? classes.blue
+                                  : !active
+                                  ? ""
+                                  : classes.gray
+                              }>
                               {item.name}
                             </LessonButton>
                           ) : (
@@ -745,9 +775,13 @@ const Profil = () => {
                   <Grid item>
                     <Grid container spacing={2} justify="space-between">
                       <Grid item>
-                        <GrayButton>Evaluatie</GrayButton>
+                        <GrayButton className={clicked ? classes.blue : ""}>
+                          Evaluatie
+                        </GrayButton>
 
-                        <GrayButton>Hoofdstukken</GrayButton>
+                        <GrayButton className={clicked ? classes.blue : ""}>
+                          Hoofdstukken
+                        </GrayButton>
                       </Grid>
 
                       <Grid item>
@@ -766,11 +800,7 @@ const Profil = () => {
     </Paper>
   ));
 
- useEffect(() => {
-
- }, [material, index,selected])
-
-
+  useEffect(() => {}, [material, lessonIndex, active]);
 
   return (
     <Container className={classes.container}>
