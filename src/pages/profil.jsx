@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Grid, Button, Paper, Typography } from "@material-ui/core";
 
@@ -722,15 +722,16 @@ const Profil = () => {
                         {myButtons.map((item) =>
                           !item.disabled && option.section === item.section ? (
                             <LessonButton
-                              key={`${item.section}${item.id}`}
+                              key={`${item.section}${item.name}${item.id}`}
                               selected={selected}
-                              section={item.section}
-                              id={item.id}
-                              name={item.name}
-                              disabled={item.disabled}
-                              active={item.active}
-                              completed={item.completed}
-                              onClick={buttonClick()}>
+                              // section={item.section}
+                              // id={item.id}
+                              // name={item.name}
+                              // disabled={item.disabled}
+                              // active={item.active}
+                              // completed={item.completed}
+                              // onClick={setSelected(true)}
+                              >
                               {item.name}
                             </LessonButton>
                           ) : (
@@ -764,6 +765,12 @@ const Profil = () => {
       </Grid>
     </Paper>
   ));
+
+ useEffect(() => {
+
+ }, [material, index,selected])
+
+
 
   return (
     <Container className={classes.container}>
