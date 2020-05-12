@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Container, Grid, Button, Paper, Typography } from "@material-ui/core";
+import { Container, Grid, Paper, Typography } from "@material-ui/core";
 import {
   BigBlueRoundButton as LessonBtn,
   BlueButton,
@@ -140,10 +140,7 @@ const Spaans = () => {
               </Grid>
             </Grid>
             <Grid item>
-              <SmallBlueText>
-                Hoofdstuk verschuldigd voor: <br />
-                {lesson.date}
-              </SmallBlueText>
+              <SmallBlueText>{lesson.date}</SmallBlueText>
             </Grid>
           </Grid>
         </Grid>
@@ -158,7 +155,7 @@ const Spaans = () => {
               />
               <Grid item container justify="center" alignItems="center">
                 {material && index === lesson.index ? (
-                  <BlueButton className={classes.graybutton}>
+                  <BlueButton className={classes.bluebutton}>
                     Materiaal
                   </BlueButton>
                 ) : (

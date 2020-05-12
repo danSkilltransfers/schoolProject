@@ -134,13 +134,14 @@ export default function Header(props) {
   const [openDrawer, setOpenDrawer] = useState(false);
   const [openBanner, setOpenBanner] = useState(false);
   const [signIn, setSignIn] = useState(false);
-  const[bannerColor, setBannerColor]=useState('');
+  const [bannerColor, setBannerColor] = useState("");
+
 
   //takes care of index of tabs
   const handleTabsChange = (e, newValue) => {
     props.setValue(newValue);
     setOpenBanner(false);
-    setBannerColor('');
+    setBannerColor("");
   };
   // takes care of opening the menu and selecting the menu item
   const handleClick = (e) => {
@@ -151,14 +152,13 @@ export default function Header(props) {
   const handleClose = (e) => {
     setAnchorEl(null);
     setOpenMenu(false);
-    
   };
   // handles the menu items and opens the banner
   const handleMenuItemClick = (e, i) => {
     setAnchorEl(null);
     setOpenMenu(false);
     setOpenBanner(true);
-    setBannerColor(theme.palette.common.bannerblue)
+    setBannerColor(theme.palette.common.bannerblue);
     props.setSelectedIndex(i);
   };
   //s meant to stop default behaviors like clicking a checkbox to check it,
@@ -167,6 +167,7 @@ export default function Header(props) {
     if (event.key === "Tab") {
       event.preventDefault();
       setOpenMenu(false);
+      
     }
   }
 
@@ -280,6 +281,7 @@ export default function Header(props) {
                 }
                 classes={{ selected: classes.drawerItemSelectedText }}
                 onClick={() => {
+                  setBannerColor("");
                   setOpenDrawer(false);
                   props.setValue(route.activeIndex);
                   props.setSelectedIndex(route.selectedIndex);
@@ -317,7 +319,9 @@ export default function Header(props) {
 
   return (
     <>
-      <AppBar className={classes.appbar} style={{background: `${bannerColor}`}}>
+      <AppBar
+        className={classes.appbar}
+        style={{ background: `${bannerColor}` }}>
         <Container maxWidth="lg">
           <Grid container direction="column">
             <Grid
