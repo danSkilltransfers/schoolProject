@@ -55,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "1rem 0 .5rem",
   },
   lessontext: {
+    textAlign:"justify",
     maxWidth: "30rem",
   },
   info: {
@@ -119,7 +120,7 @@ const Profil = () => {
     {
       section: "Actividades Vocabulario",
       id: 1,
-      name: "Exercise 1",
+      name: "Ejercicio 1",
       disabled: false,
       active: false,
       completed: false,
@@ -127,7 +128,7 @@ const Profil = () => {
     {
       section: "Actividades Vocabulario",
       id: 2,
-      name: "Exercise 2",
+      name: "Ejercicio 2",
       disabled: true,
       active: false,
       completed: false,
@@ -135,7 +136,7 @@ const Profil = () => {
     {
       section: "Actividades Vocabulario",
       id: 3,
-      name: "Exercise 3",
+      name: "Ejercicio 3",
       disabled: false,
       active: false,
       completed: false,
@@ -143,7 +144,7 @@ const Profil = () => {
     {
       section: "Actividades Vocabulario",
       id: 4,
-      name: "Exercise 4",
+      name: "Ejercicio 4",
       disabled: true,
       active: false,
       completed: false,
@@ -151,7 +152,7 @@ const Profil = () => {
     {
       section: "Actividades Vocabulario",
       id: 5,
-      name: "Exercise 5",
+      name: "Ejercicio 5",
       disabled: true,
       active: false,
       completed: false,
@@ -159,7 +160,7 @@ const Profil = () => {
     {
       section: "Actividades Vocabulario",
       id: 6,
-      name: "Exercise 6",
+      name: "Ejercicio 6",
       disabled: true,
       active: false,
       completed: false,
@@ -167,7 +168,7 @@ const Profil = () => {
     {
       section: "Actividades Vocabulario",
       id: 7,
-      name: "Exercise 7",
+      name: "Ejercicio 7",
       disabled: false,
       active: false,
       completed: false,
@@ -175,7 +176,7 @@ const Profil = () => {
     {
       section: "Actividades Vocabulario",
       id: 8,
-      name: "Exercise 8",
+      name: "Ejercicio 8",
       disabled: true,
       active: false,
       completed: false,
@@ -183,7 +184,7 @@ const Profil = () => {
     {
       section: "Actividades Vocabulario",
       id: 9,
-      name: "Exercise 9",
+      name: "Ejercicio 9",
       disabled: false,
       active: false,
       completed: false,
@@ -191,7 +192,7 @@ const Profil = () => {
     {
       section: "Actividades Vocabulario",
       id: 10,
-      name: "Exercise 10",
+      name: "Ejercicio 10",
       disabled: false,
       active: false,
       completed: false,
@@ -199,7 +200,7 @@ const Profil = () => {
     {
       section: "Actividades Vocabulario",
       id: 11,
-      name: "Exercise 11",
+      name: "Ejercicio 11",
       disabled: false,
       active: false,
       completed: false,
@@ -207,7 +208,7 @@ const Profil = () => {
     {
       section: "Actividades Vocabulario",
       id: 12,
-      name: "Exercise 12",
+      name: "Ejercicio 12",
       disabled: false,
       active: false,
       completed: false,
@@ -215,7 +216,7 @@ const Profil = () => {
     {
       section: "Actividades Vocabulario",
       id: 13,
-      name: "Exercise 13",
+      name: "Ejercicio 13",
       disabled: true,
       active: false,
       completed: false,
@@ -223,7 +224,7 @@ const Profil = () => {
     {
       section: "Actividades Vocabulario",
       id: 14,
-      name: "Exercise 14",
+      name: "Ejercicio 14",
       disabled: true,
       active: false,
       completed: false,
@@ -231,7 +232,7 @@ const Profil = () => {
     {
       section: "Actividades Vocabulario",
       id: 15,
-      name: "Exercise 15",
+      name: "Ejercicio 15",
       disabled: true,
       active: false,
       completed: false,
@@ -239,7 +240,7 @@ const Profil = () => {
     {
       section: "Actividades Gramática",
       id: 1,
-      name: "Exercise 1",
+      name: "Ejercicio 1",
       disabled: false,
       active: false,
       completed: false,
@@ -247,7 +248,7 @@ const Profil = () => {
     {
       section: "Actividades Gramática",
       id: 2,
-      name: "Exercise 2",
+      name: "Ejercicio 2",
       disabled: true,
       active: false,
       completed: false,
@@ -255,7 +256,7 @@ const Profil = () => {
     {
       section: "Actividades Gramática",
       id: 3,
-      name: "Exercise 3",
+      name: "Ejercicio 3",
       disabled: false,
       active: false,
       completed: false,
@@ -263,7 +264,7 @@ const Profil = () => {
     {
       section: "Actividades Gramática",
       id: 4,
-      name: "Exercise 4",
+      name: "Ejercicio 4",
       disabled: false,
       active: false,
       completed: false,
@@ -271,7 +272,7 @@ const Profil = () => {
     {
       section: "Actividades Gramática",
       id: 5,
-      name: "Exercise 5",
+      name: "Ejercicio 5",
       disabled: false,
       active: false,
       completed: false,
@@ -279,7 +280,7 @@ const Profil = () => {
     {
       section: "Actividades Gramática",
       id: 6,
-      name: "Exercise 6",
+      name: "Ejercicio 6",
       disabled: false,
       active: false,
       completed: false,
@@ -287,7 +288,7 @@ const Profil = () => {
     {
       section: "Actividades Gramática",
       id: 7,
-      name: "Exercise 7",
+      name: "Ejercicio 7",
       disabled: false,
       active: false,
       completed: false,
@@ -295,7 +296,7 @@ const Profil = () => {
     {
       section: "Actividades Gramática",
       id: 8,
-      name: "Exercise 8",
+      name: "Ejercicio 8",
       disabled: true,
       active: false,
       completed: false,
@@ -303,7 +304,7 @@ const Profil = () => {
     {
       section: "Actividades Gramática",
       id: 9,
-      name: "Exercise 9",
+      name: "Ejercicio 9",
       disabled: true,
       active: false,
       completed: false,
@@ -311,7 +312,7 @@ const Profil = () => {
     {
       section: "Actividades Gramática",
       id: 10,
-      name: "Exercise 10",
+      name: "Ejercicio 10",
       disabled: true,
       active: false,
       completed: false,
@@ -319,7 +320,7 @@ const Profil = () => {
     {
       section: "Actividades Gramática",
       id: 11,
-      name: "Exercise 11",
+      name: "Ejercicio 11",
       disabled: true,
       active: false,
       completed: false,
@@ -327,7 +328,7 @@ const Profil = () => {
     {
       section: "Actividades Gramática",
       id: 12,
-      name: "Exercise 12",
+      name: "Ejercicio 12",
       disabled: true,
       active: false,
       completed: false,
@@ -335,7 +336,7 @@ const Profil = () => {
     {
       section: "Actividades Gramática",
       id: 13,
-      name: "Exercise 13",
+      name: "Ejercicio 13",
       disabled: true,
       active: false,
       completed: false,
@@ -343,7 +344,7 @@ const Profil = () => {
     {
       section: "Actividades Gramática",
       id: 14,
-      name: "Exercise 14",
+      name: "Ejercicio 14",
       disabled: true,
       active: false,
       completed: false,
@@ -351,7 +352,7 @@ const Profil = () => {
     {
       section: "Actividades Gramática",
       id: 15,
-      name: "Exercise 15",
+      name: "Ejercicio 15",
       disabled: true,
       active: false,
       completed: false,
@@ -359,7 +360,7 @@ const Profil = () => {
     {
       section: "Actividades Comunicación",
       id: 1,
-      name: "Exercise 1",
+      name: "Ejercicio 1",
       disabled: true,
       active: false,
       completed: false,
@@ -367,7 +368,7 @@ const Profil = () => {
     {
       section: "Actividades Comunicación",
       id: 2,
-      name: "Exercise 2",
+      name: "Ejercicio 2",
       disabled: true,
       active: false,
       completed: false,
@@ -375,7 +376,7 @@ const Profil = () => {
     {
       section: "Actividades Comunicación",
       id: 3,
-      name: "Exercise 3",
+      name: "Ejercicio 3",
       disabled: true,
       active: false,
       completed: false,
@@ -383,7 +384,7 @@ const Profil = () => {
     {
       section: "Actividades Comunicación",
       id: 4,
-      name: "Exercise 4",
+      name: "Ejercicio 4",
       disabled: false,
       active: false,
       completed: false,
@@ -391,7 +392,7 @@ const Profil = () => {
     {
       section: "Actividades Comunicación",
       id: 5,
-      name: "Exercise 5",
+      name: "Ejercicio 5",
       disabled: true,
       active: false,
       completed: false,
@@ -399,7 +400,7 @@ const Profil = () => {
     {
       section: "Actividades Comunicación",
       id: 6,
-      name: "Exercise 6",
+      name: "Ejercicio 6",
       disabled: false,
       active: false,
       completed: false,
@@ -407,7 +408,7 @@ const Profil = () => {
     {
       section: "Actividades Comunicación",
       id: 7,
-      name: "Exercise 7",
+      name: "Ejercicio 7",
       disabled: true,
       active: false,
       completed: false,
@@ -415,7 +416,7 @@ const Profil = () => {
     {
       section: "Actividades Comunicación",
       id: 8,
-      name: "Exercise 8",
+      name: "Ejercicio 8",
       disabled: false,
       active: false,
       completed: false,
@@ -423,7 +424,7 @@ const Profil = () => {
     {
       section: "Actividades Comunicación",
       id: 9,
-      name: "Exercise 9",
+      name: "Ejercicio 9",
       disabled: true,
       active: false,
       completed: false,
@@ -431,7 +432,7 @@ const Profil = () => {
     {
       section: "Actividades Comunicación",
       id: 10,
-      name: "Exercise 10",
+      name: "Ejercicio 10",
       disabled: true,
       active: false,
       completed: false,
@@ -439,7 +440,7 @@ const Profil = () => {
     {
       section: "Actividades Comunicación",
       id: 11,
-      name: "Exercise 11",
+      name: "Ejercicio 11",
       disabled: true,
       active: false,
       completed: false,
@@ -447,7 +448,7 @@ const Profil = () => {
     {
       section: "Actividades Comunicación",
       id: 12,
-      name: "Exercise 12",
+      name: "Ejercicio 12",
       disabled: true,
       active: false,
       completed: false,
@@ -455,7 +456,7 @@ const Profil = () => {
     {
       section: "Actividades Comunicación",
       id: 13,
-      name: "Exercise 13",
+      name: "Ejercicio 13",
       disabled: true,
       active: false,
       completed: false,
@@ -463,7 +464,7 @@ const Profil = () => {
     {
       section: "Actividades Comunicación",
       id: 14,
-      name: "Exercise 14",
+      name: "Ejercicio 14",
       disabled: true,
       active: false,
       completed: false,
@@ -471,7 +472,7 @@ const Profil = () => {
     {
       section: "Actividades Comunicación",
       id: 15,
-      name: "Exercise 15",
+      name: "Ejercicio 15",
       disabled: true,
       active: false,
       completed: false,
@@ -479,7 +480,7 @@ const Profil = () => {
     {
       section: "Actividades Reflexión y evaluación",
       id: 1,
-      name: "Exercise 1",
+      name: "Ejercicio 1",
       disabled: false,
       active: false,
       completed: false,
@@ -487,7 +488,7 @@ const Profil = () => {
     {
       section: "Actividades Reflexión y evaluación",
       id: 2,
-      name: "Exercise 2",
+      name: "Ejercicio 2",
       disabled: false,
       active: false,
       completed: false,
@@ -495,7 +496,7 @@ const Profil = () => {
     {
       section: "Actividades Reflexión y evaluación",
       id: 3,
-      name: "Exercise 3",
+      name: "Ejercicio 3",
       disabled: false,
       active: false,
       completed: false,
@@ -503,7 +504,7 @@ const Profil = () => {
     {
       section: "Actividades Reflexión y evaluación",
       id: 4,
-      name: "Exercise 4",
+      name: "Ejercicio 4",
       disabled: false,
       active: false,
       completed: false,
@@ -511,7 +512,7 @@ const Profil = () => {
     {
       section: "Actividades Reflexión y evaluación",
       id: 5,
-      name: "Exercise 5",
+      name: "Ejercicio 5",
       disabled: false,
       active: false,
       completed: false,
@@ -519,7 +520,7 @@ const Profil = () => {
     {
       section: "Actividades Reflexión y evaluación",
       id: 6,
-      name: "Exercise 6",
+      name: "Ejercicio 6",
       disabled: true,
       active: false,
       completed: false,
@@ -527,7 +528,7 @@ const Profil = () => {
     {
       section: "Actividades Reflexión y evaluación",
       id: 7,
-      name: "Exercise 7",
+      name: "Ejercicio 7",
       disabled: true,
       active: false,
       completed: false,
@@ -535,7 +536,7 @@ const Profil = () => {
     {
       section: "Actividades Reflexión y evaluación",
       id: 8,
-      name: "Exercise 8",
+      name: "Ejercicio 8",
       disabled: true,
       active: false,
       completed: false,
@@ -543,7 +544,7 @@ const Profil = () => {
     {
       section: "Actividades Reflexión y evaluación",
       id: 9,
-      name: "Exercise 9",
+      name: "Ejercicio 9",
       disabled: true,
       active: false,
       completed: false,
@@ -551,7 +552,7 @@ const Profil = () => {
     {
       section: "Actividades Reflexión y evaluación",
       id: 10,
-      name: "Exercise 10",
+      name: "Ejercicio 10",
       disabled: true,
       active: false,
       completed: false,
@@ -559,7 +560,7 @@ const Profil = () => {
     {
       section: "Actividades Reflexión y evaluación",
       id: 11,
-      name: "Exercise 11",
+      name: "Ejercicio 11",
       disabled: true,
       active: false,
       completed: false,
@@ -567,7 +568,7 @@ const Profil = () => {
     {
       section: "Actividades Reflexión y evaluación",
       id: 12,
-      name: "Exercise 12",
+      name: "Ejercicio 12",
       disabled: true,
       active: false,
       completed: false,
@@ -575,7 +576,7 @@ const Profil = () => {
     {
       section: "Actividades Reflexión y evaluación",
       id: 13,
-      name: "Exercise 13",
+      name: "Ejercicio 13",
       disabled: true,
       active: false,
       completed: false,
@@ -583,7 +584,7 @@ const Profil = () => {
     {
       section: "Actividades Reflexión y evaluación",
       id: 14,
-      name: "Exercise 14",
+      name: "Ejercicio 14",
       disabled: true,
       active: false,
       completed: false,
@@ -591,7 +592,7 @@ const Profil = () => {
     {
       section: "Actividades Reflexión y evaluación",
       id: 15,
-      name: "Exercise 15",
+      name: "Ejercicio 15",
       disabled: true,
       active: false,
       completed: false,
@@ -645,8 +646,8 @@ const Profil = () => {
     </Paper>
   );
 
-  const Chapter = chaptersData.map((lesson) => (
-    <Paper className={classes.paper} square={true} key={`${lesson.index}`}>
+  const Chapter = chaptersData.map((lesson, index) => (
+    <Paper className={classes.paper} square={true} key={index}>
       <Grid container direction="column">
         <Grid item>
           <Grid
