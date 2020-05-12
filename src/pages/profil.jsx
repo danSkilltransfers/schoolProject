@@ -628,22 +628,16 @@ const Profil = () => {
   const handleOpen = () => {
     setMaterial(true);
     setActive(false);
-    setClicked(false)
+    setClicked(false);
   };
   const handleClose = () => {
-    setClicked(false)
+    setClicked(false);
     if (material) setMaterial(false);
   };
   const buttonClick = () => {
     setActive(true);
     setClicked(true);
   };
-  // const buttonColor = () => {
-  //   if (myButtons.active === active) {
-  //     setColor();
-  //   } else {
-  //   }
-  // };
 
   const Info = (
     <Paper square={true}>
@@ -745,12 +739,7 @@ const Profil = () => {
                           !item.disabled && option.section === item.section ? (
                             <LessonButton
                               key={index}
-                              // section={item.section}
-                              // id={item.id}
-                              // name={item.name}
-                              // disabled={item.disabled}
                               active={active}
-                              // completed={item.completed}
                               onClick={() => {
                                 buttonClick();
                                 setButtonIndex(index);

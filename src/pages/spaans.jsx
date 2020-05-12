@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Grid, Paper, Typography } from "@material-ui/core";
 import {
-  BigBlueRoundButton as LessonBtn,
+  BigBlueRoundButton as LessonButton,
   BlueButton,
   GrayButton,
   SmallBlueText,
@@ -43,7 +43,9 @@ const useStyles = makeStyles((theme) => ({
     margin: "1rem 0 .5rem",
   },
   lessontext: {
+    marginTop:"1rem",
     maxWidth: "35rem",
+    textAlign:"justify"
   },
   graybutton: {
     [theme.breakpoints.down("xs")]: { width: "auto" },
@@ -55,13 +57,24 @@ const useStyles = makeStyles((theme) => ({
   bluebutton: {
     [theme.breakpoints.down("xs")]: { width: "auto" },
   },
+  blue: {
+    color: "white",
+    backgroundColor: theme.palette.common.lightblue,
+  },
+  gray: {
+    color: theme.palette.common.titlegray,
+    border: `1px solid ${theme.palette.common.titlegray}`,
+  },
 }));
 
 const Spaans = () => {
   const classes = useStyles();
 
   const [material, setMaterial] = useState(false);
-  const [index, setIndex] = useState(0);
+  const [lessonIndex, setLessonIndex] = useState(0);
+  const [active, setActive] = useState(false);
+  const [buttonIndex, setButtonIndex] = useState(0);
+  const [clicked, setClicked] = useState(false);
 
   const chaptersData = [
     {
@@ -113,15 +126,532 @@ const Spaans = () => {
         "Leer Spaans in de lente! Of je je nu wilt voorbereiden op een reis naar Spanje of een ander Spaanstalig land, of je meer wilt verdiepen in de wereldtaal die deuren opent naar de cultuur van al die landen",
     },
   ];
+  const myButtons = [
+    {
+      section: "Actividades Vocabulario",
+      id: 1,
+      name: "Exercise 1",
+      disabled: false,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Vocabulario",
+      id: 2,
+      name: "Exercise 2",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Vocabulario",
+      id: 3,
+      name: "Exercise 3",
+      disabled: false,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Vocabulario",
+      id: 4,
+      name: "Exercise 4",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Vocabulario",
+      id: 5,
+      name: "Exercise 5",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Vocabulario",
+      id: 6,
+      name: "Exercise 6",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Vocabulario",
+      id: 7,
+      name: "Exercise 7",
+      disabled: false,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Vocabulario",
+      id: 8,
+      name: "Exercise 8",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Vocabulario",
+      id: 9,
+      name: "Exercise 9",
+      disabled: false,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Vocabulario",
+      id: 10,
+      name: "Exercise 10",
+      disabled: false,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Vocabulario",
+      id: 11,
+      name: "Exercise 11",
+      disabled: false,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Vocabulario",
+      id: 12,
+      name: "Exercise 12",
+      disabled: false,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Vocabulario",
+      id: 13,
+      name: "Exercise 13",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Vocabulario",
+      id: 14,
+      name: "Exercise 14",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Vocabulario",
+      id: 15,
+      name: "Exercise 15",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Gramática",
+      id: 1,
+      name: "Exercise 1",
+      disabled: false,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Gramática",
+      id: 2,
+      name: "Exercise 2",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Gramática",
+      id: 3,
+      name: "Exercise 3",
+      disabled: false,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Gramática",
+      id: 4,
+      name: "Exercise 4",
+      disabled: false,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Gramática",
+      id: 5,
+      name: "Exercise 5",
+      disabled: false,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Gramática",
+      id: 6,
+      name: "Exercise 6",
+      disabled: false,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Gramática",
+      id: 7,
+      name: "Exercise 7",
+      disabled: false,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Gramática",
+      id: 8,
+      name: "Exercise 8",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Gramática",
+      id: 9,
+      name: "Exercise 9",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Gramática",
+      id: 10,
+      name: "Exercise 10",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Gramática",
+      id: 11,
+      name: "Exercise 11",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Gramática",
+      id: 12,
+      name: "Exercise 12",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Gramática",
+      id: 13,
+      name: "Exercise 13",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Gramática",
+      id: 14,
+      name: "Exercise 14",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Gramática",
+      id: 15,
+      name: "Exercise 15",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Comunicación",
+      id: 1,
+      name: "Exercise 1",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Comunicación",
+      id: 2,
+      name: "Exercise 2",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Comunicación",
+      id: 3,
+      name: "Exercise 3",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Comunicación",
+      id: 4,
+      name: "Exercise 4",
+      disabled: false,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Comunicación",
+      id: 5,
+      name: "Exercise 5",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Comunicación",
+      id: 6,
+      name: "Exercise 6",
+      disabled: false,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Comunicación",
+      id: 7,
+      name: "Exercise 7",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Comunicación",
+      id: 8,
+      name: "Exercise 8",
+      disabled: false,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Comunicación",
+      id: 9,
+      name: "Exercise 9",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Comunicación",
+      id: 10,
+      name: "Exercise 10",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Comunicación",
+      id: 11,
+      name: "Exercise 11",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Comunicación",
+      id: 12,
+      name: "Exercise 12",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Comunicación",
+      id: 13,
+      name: "Exercise 13",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Comunicación",
+      id: 14,
+      name: "Exercise 14",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Comunicación",
+      id: 15,
+      name: "Exercise 15",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Reflexión y evaluación",
+      id: 1,
+      name: "Exercise 1",
+      disabled: false,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Reflexión y evaluación",
+      id: 2,
+      name: "Exercise 2",
+      disabled: false,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Reflexión y evaluación",
+      id: 3,
+      name: "Exercise 3",
+      disabled: false,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Reflexión y evaluación",
+      id: 4,
+      name: "Exercise 4",
+      disabled: false,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Reflexión y evaluación",
+      id: 5,
+      name: "Exercise 5",
+      disabled: false,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Reflexión y evaluación",
+      id: 6,
+      name: "Exercise 6",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Reflexión y evaluación",
+      id: 7,
+      name: "Exercise 7",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Reflexión y evaluación",
+      id: 8,
+      name: "Exercise 8",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Reflexión y evaluación",
+      id: 9,
+      name: "Exercise 9",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Reflexión y evaluación",
+      id: 10,
+      name: "Exercise 10",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Reflexión y evaluación",
+      id: 11,
+      name: "Exercise 11",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Reflexión y evaluación",
+      id: 12,
+      name: "Exercise 12",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Reflexión y evaluación",
+      id: 13,
+      name: "Exercise 13",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Reflexión y evaluación",
+      id: 14,
+      name: "Exercise 14",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+    {
+      section: "Actividades Reflexión y evaluación",
+      id: 15,
+      name: "Exercise 15",
+      disabled: true,
+      active: false,
+      completed: false,
+    },
+  ];
+
+  const exercises = [
+    {
+      chapter: "Chapter1: Hola",
+      section: "Actividades Vocabulario",
+      name: "Exercise 1",
+      number: "1",
+    },
+    {
+      chapter: "Chapter1: Hola",
+      section: "Actividades Gramática",
+      name: "Exercise 2",
+      number: "2",
+    },
+    {
+      chapter: "Chapter1: Hola",
+      section: "Actividades Comunicación",
+      name: "Exercise 3",
+      number: "3",
+    },
+    {
+      chapter: "Chapter1: Hola",
+      section: "Actividades Reflexión y evaluación",
+      name: "Exercise 4",
+      number: "4",
+    },
+  ];
+
   const handleOpen = () => {
     setMaterial(true);
+    setActive(false);
+    setClicked(false);
   };
   const handleClose = () => {
+    setClicked(false);
     if (material) setMaterial(false);
   };
+  const buttonClick = () => {
+    setActive(true);
+    setClicked(true);
+  };
 
-  const Chapter = chaptersData.map((lesson) => (
-    <Paper className={classes.paper} square={true} key={`${lesson.index}`}>
+  const Chapter = chaptersData.map((lesson, index) => (
+    <Paper className={classes.paper} square={true} key={index}>
       <Grid container direction="column" spacing={1}>
         <Grid item>
           <Grid
@@ -154,7 +684,7 @@ const Spaans = () => {
                 className={classes.lessonimage}
               />
               <Grid item container justify="center" alignItems="center">
-                {material && index === lesson.index ? (
+                {material && lessonIndex === lesson.index ? (
                   <BlueButton className={classes.bluebutton}>
                     Materiaal
                   </BlueButton>
@@ -164,69 +694,55 @@ const Spaans = () => {
               </Grid>
             </Grid>
 
-            <Grid item md={8} sm={6} zeroMinWidth>
-              <Grid container direction="column" spacing={3}>
-                <Grid item>
+            <Grid item md sm={6} zeroMinWidth>
+              <Grid container direction="column" >
+                <Grid item >
                   <Typography variant="h4">
                     <u>{lesson.name}</u>
                   </Typography>
                 </Grid>
 
                 <Grid item>
-                  {material && index === lesson.index ? (
-                    <Grid container direction="column">
+                  {material && lessonIndex === lesson.index ? (
+                    <Grid
+                      container
+                      direction="column"
+                     >
                       <Grid item>
-                        <Typography className={classes.activity}>
-                          Actividades Vocabulario
-                        </Typography>
-                        <Grid item container spacing={2}>
-                          <LessonBtn>Ejercicio 1</LessonBtn>
-                          <LessonBtn>Ejercicio 3</LessonBtn>
-                          <LessonBtn>Ejercicio 7</LessonBtn>
-                          <LessonBtn>Ejercicio 9</LessonBtn>
-                          <LessonBtn>Ejercicio 10</LessonBtn>
-                          <LessonBtn>Ejercicio 11</LessonBtn>
-                        </Grid>
-
-                        <Grid item>
-                          <Typography className={classes.activity}>
-                            Actividades Gramática
-                          </Typography>
-                          <Grid item container spacing={2}>
-                            <LessonBtn>Ejercicio 1</LessonBtn>
-                            <LessonBtn>Ejercicio 3</LessonBtn>
-                            <LessonBtn>Ejercicio 4</LessonBtn>
-                            <LessonBtn>Ejercicio 5</LessonBtn>
-                            <LessonBtn>Ejercicio 6</LessonBtn>
-                          </Grid>
-                        </Grid>
-
-                        <Grid item>
-                          <Typography className={classes.activity}>
-                            Actividades Comunicación
-                          </Typography>
-                          <Grid item container spacing={2}>
-                            <LessonBtn>Ejercicio 4</LessonBtn>
-                            <LessonBtn>Ejercicio 6</LessonBtn>
-                            <LessonBtn>Ejercicio 7</LessonBtn>
-                            <LessonBtn>Ejercicio 8</LessonBtn>
-                          </Grid>
-
-                          <Grid item>
-                            <Typography className={classes.activity}>
-                              Actividades Reflexión y evaluación
+                        {exercises.map((option) => (
+                          <>
+                            <Typography
+                              className={classes.activity}
+                              key={option.section}>
+                              {option.section}
                             </Typography>
-
                             <Grid item container spacing={2}>
-                              {" "}
-                              <LessonBtn>Ejercicio 1</LessonBtn>
-                              <LessonBtn>Ejercicio 2</LessonBtn>
-                              <LessonBtn>Ejercicio 3</LessonBtn>
-                              <LessonBtn>Ejercicio 4</LessonBtn>
-                              <LessonBtn>Ejercicio 5</LessonBtn>
+                              {myButtons.map((item, index) =>
+                                !item.disabled &&
+                                option.section === item.section ? (
+                                  <LessonButton
+                                    key={index}
+                                    active={active}
+                                    onClick={() => {
+                                      buttonClick();
+                                      setButtonIndex(index);
+                                    }}
+                                    className={
+                                      active && index === buttonIndex
+                                        ? classes.blue
+                                        : !active
+                                        ? ""
+                                        : classes.gray
+                                    }>
+                                    {item.name}
+                                  </LessonButton>
+                                ) : (
+                                  ""
+                                )
+                              )}
                             </Grid>
-                          </Grid>
-                        </Grid>
+                          </>
+                        ))}
                       </Grid>
                     </Grid>
                   ) : (
@@ -246,11 +762,12 @@ const Spaans = () => {
           justify="flex-end"
           alignItems="flex-end"
           xs={12}>
-          {material && index === lesson.index ? (
+          {material && lessonIndex === lesson.index ? (
             <>
-              {" "}
-              <GrayButton className={classes.graybutton}>Uitleg</GrayButton>
-              <GrayButton className={classes.graybutton}>
+              <GrayButton className={clicked ? classes.blue : ""}>
+                Uitleg
+              </GrayButton>
+              <GrayButton className={clicked ? classes.blue : ""}>
                 Kies Lessen
               </GrayButton>
             </>
@@ -259,29 +776,22 @@ const Spaans = () => {
           )}
 
           <BlueButton
-            className={classes.bluebutton}
             onClick={() => {
-              setIndex(lesson.index);
-              if (material && index === lesson.index) {
+              setLessonIndex(lesson.index);
+              if (material && lessonIndex === lesson.index) {
                 handleClose();
               } else {
                 handleOpen();
               }
             }}>
-            {material && index === lesson.index ? "Cancel" : "Kies Lessen"}
+            {material && lessonIndex === lesson.index
+              ? "Cancel"
+              : "Kies Lessen"}
           </BlueButton>
         </Grid>
       </Grid>
     </Paper>
   ));
-
-  // useEffect(() => {
-  //   chaptersData.forEach((lesson) => {
-  //     if (index !== lesson.index && material) {
-  //       setIndex(lesson.index);
-  //     }
-  //   });
-  // }, [index, material, chaptersData]);
 
   return (
     <Container maxWidth="lg">
