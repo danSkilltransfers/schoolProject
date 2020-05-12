@@ -111,7 +111,7 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     right: "3vw",
     [theme.breakpoints.down("md")]: { right: "2vw", width: "24px" },
-    [theme.breakpoints.down("sm")]: { right: "3vw" },
+
     [theme.breakpoints.down("xs")]: { right: "1vw" },
   },
   languageicon: {
