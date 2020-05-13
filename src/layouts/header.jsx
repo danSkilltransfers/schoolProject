@@ -136,7 +136,6 @@ export default function Header(props) {
   const [signIn, setSignIn] = useState(false);
   const [bannerColor, setBannerColor] = useState("");
 
-
   //takes care of index of tabs
   const handleTabsChange = (e, newValue) => {
     props.setValue(newValue);
@@ -167,7 +166,6 @@ export default function Header(props) {
     if (event.key === "Tab") {
       event.preventDefault();
       setOpenMenu(false);
-      
     }
   }
 
@@ -347,7 +345,7 @@ export default function Header(props) {
                   component={Link}
                   to="/landing"
                   onClick={() => {
-                    props.setValue(null);
+                    
                     setOpenBanner(false);
                   }}>
                   <img src={logo} alt="logo" className={classes.logo} />

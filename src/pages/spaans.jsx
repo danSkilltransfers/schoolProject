@@ -43,9 +43,9 @@ const useStyles = makeStyles((theme) => ({
     margin: "1rem 0 .5rem",
   },
   lessontext: {
-    marginTop:"1rem",
+    marginTop: "1rem",
     maxWidth: "35rem",
-    textAlign:"justify"
+    textAlign: "justify",
   },
   graybutton: {
     [theme.breakpoints.down("xs")]: { width: "auto" },
@@ -695,8 +695,8 @@ const Spaans = () => {
             </Grid>
 
             <Grid item md sm={6} zeroMinWidth>
-              <Grid container direction="column" >
-                <Grid item >
+              <Grid container direction="column">
+                <Grid item>
                   <Typography variant="h4">
                     <u>{lesson.name}</u>
                   </Typography>
@@ -704,10 +704,7 @@ const Spaans = () => {
 
                 <Grid item>
                   {material && lessonIndex === lesson.index ? (
-                    <Grid
-                      container
-                      direction="column"
-                     >
+                    <Grid container direction="column">
                       <Grid item>
                         {exercises.map((option) => (
                           <>
@@ -764,7 +761,11 @@ const Spaans = () => {
           xs={12}>
           {material && lessonIndex === lesson.index ? (
             <>
-              <GrayButton className={clicked ? classes.blue : ""}>
+              <GrayButton
+                className={clicked ? classes.blue : ""}
+                href="https://drive.google.com/file/d/1pcZgqIMq_QaVO1gEZInaege-qesp9Vdr/view?usp=sharing"
+                target='_blank'
+                rel="noreferrer noopener">
                 Uitleg
               </GrayButton>
               <GrayButton className={clicked ? classes.blue : ""}>
