@@ -175,7 +175,7 @@ export default function Header(props) {
 
   const routes = [
     { name: "Mijn Profiel", link: "/mijn-profiel", activeIndex: 0 },
-    { name: "Calendar", link: "/calendar", activeIndex: 1 },
+    { name: "Kalendar", link: "/calendar", activeIndex: 1 },
     {
       name: "Vakken",
       link: "/vakken",
