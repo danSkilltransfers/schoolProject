@@ -139,7 +139,7 @@ const Profil = () => {
     </Paper>
   );
 
-  const Chapter = chaptersData().map((lesson, index) => (
+  const Chapter = chaptersData.map((lesson, index) => (
     <Paper className={classes.paper} square={true} key={index}>
       <Grid container direction="column">
         <Grid item>

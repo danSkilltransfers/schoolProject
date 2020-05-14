@@ -6,7 +6,7 @@ import calendar from "../assets/calendar/calendar.png";
 import booking from "../assets/calendar/booking.png";
 
 const useStyles = makeStyles((theme) => ({
-  container: { maxWidth: "70rem" },
+  container: { maxWidth: "80rem", minHeight:"100vh" },
 
   paper: {
     margin: "0 auto 1rem auto",
