@@ -77,6 +77,7 @@ const Spaans = () => {
   const [active, setActive] = useState(false);
   const [buttonIndex, setButtonIndex] = useState(0);
   const [clicked, setClicked] = useState(false);
+  const [currentUrl, setCurrentUrl] = useState("");
 
   const chaptersData = [
     {
@@ -178,9 +179,13 @@ const Spaans = () => {
               />
               <Grid item container justify="center" alignItems="center">
                 {material && lessonIndex === lesson.index ? (
-                  <BlueButton className={classes.bluebutton}>
-                    Materiaal
-                  </BlueButton>
+                  <Grid container direction="column">
+                    <GrayButton className={classes.graybutton}>
+                      Materiaal
+                    </GrayButton>
+                    <GrayButton className={classes.graybutton}>SO</GrayButton>
+                    <GrayButton className={classes.graybutton}>PO</GrayButton>
+                  </Grid>
                 ) : (
                   ""
                 )}
@@ -216,6 +221,7 @@ const Spaans = () => {
                                     onClick={() => {
                                       buttonClick();
                                       setButtonIndex(index);
+                                      setCurrentUrl(item.url);
                                     }}
                                     className={
                                       active && index === buttonIndex
@@ -225,6 +231,7 @@ const Spaans = () => {
                                         : classes.gray
                                     }>
                                     {item.name}
+                                    {console.log(item.url)}
                                   </LessonButton>
                                 ) : (
                                   ""
@@ -245,13 +252,7 @@ const Spaans = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid
-          item
-          container
-          justify-sm-flex-start
-          justify="flex-end"
-          alignItems="flex-end"
-          xs={12}>
+        <Grid item container justify="flex-end" alignItems="flex-end" xs={12}>
           {material && lessonIndex === lesson.index ? (
             <>
               <GrayButton
@@ -261,7 +262,10 @@ const Spaans = () => {
                 rel="noreferrer noopener">
                 Uitleg
               </GrayButton>
-              <GrayButton className={clicked ? classes.blue : ""}>
+              <GrayButton
+                className={clicked ? classes.blue : ""}
+                href={currentUrl}
+                target="_blank">
                 Kies Lessen
               </GrayButton>
             </>

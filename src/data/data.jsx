@@ -1,6 +1,7 @@
 export const MyButtons = [
   {
     section: "Actividades Vocabulario",
+    url:"https://www.blinklearning.com/coursePlayer/clases2.php?editar=0&idcurso=1943895&idclase=112239955&modo=0",
     id: 1,
     name: "Ejercicio 1",
     disabled: false,
@@ -9,6 +10,7 @@ export const MyButtons = [
   },
   {
     section: "Actividades Vocabulario",
+ 
     id: 2,
     name: "Ejercicio 2",
     disabled: true,
@@ -17,6 +19,7 @@ export const MyButtons = [
   },
   {
     section: "Actividades Vocabulario",
+    url:"https://www.blinklearning.com/coursePlayer/clases2.php?editar=0&idcurso=1943895&idclase=112239955&modo=0",
     id: 3,
     name: "Ejercicio 3",
     disabled: false,
@@ -25,6 +28,7 @@ export const MyButtons = [
   },
   {
     section: "Actividades Vocabulario",
+    url:"https://www.blinklearning.com/coursePlayer/clases2.php?editar=0&idcurso=1943895&idclase=112239955&modo=0",
     id: 4,
     name: "Ejercicio 4",
     disabled: true,
@@ -33,6 +37,7 @@ export const MyButtons = [
   },
   {
     section: "Actividades Vocabulario",
+    url:"https://www.blinklearning.com/coursePlayer/clases2.php?editar=0&idcurso=1943895&idclase=112239955&modo=0",
     id: 5,
     name: "Ejercicio 5",
     disabled: true,
@@ -41,6 +46,7 @@ export const MyButtons = [
   },
   {
     section: "Actividades Vocabulario",
+    url:"https://www.blinklearning.com/coursePlayer/clases2.php?editar=0&idcurso=1943895&idclase=112239955&modo=0",
     id: 6,
     name: "Ejercicio 6",
     disabled: true,
@@ -49,6 +55,7 @@ export const MyButtons = [
   },
   {
     section: "Actividades Vocabulario",
+    url:"https://www.blinklearning.com/coursePlayer/clases2.php?editar=0&idcurso=1943895&idclase=112239955&modo=0",
     id: 7,
     name: "Ejercicio 7",
     disabled: false,
@@ -57,6 +64,7 @@ export const MyButtons = [
   },
   {
     section: "Actividades Vocabulario",
+    url:"https://www.blinklearning.com/coursePlayer/clases2.php?editar=0&idcurso=1943895&idclase=112239955&modo=0",
     id: 8,
     name: "Ejercicio 8",
     disabled: true,
@@ -65,6 +73,7 @@ export const MyButtons = [
   },
   {
     section: "Actividades Vocabulario",
+    url:"https://www.blinklearning.com/coursePlayer/clases2.php?editar=0&idcurso=1943895&idclase=112239955&modo=0",
     id: 9,
     name: "Ejercicio 9",
     disabled: false,
@@ -73,6 +82,7 @@ export const MyButtons = [
   },
   {
     section: "Actividades Vocabulario",
+    url:"https://www.blinklearning.com/coursePlayer/clases2.php?editar=0&idcurso=1943895&idclase=112239955&modo=0",
     id: 10,
     name: "Ejercicio 10",
     disabled: false,
@@ -81,6 +91,7 @@ export const MyButtons = [
   },
   {
     section: "Actividades Vocabulario",
+    url:"https://www.blinklearning.com/coursePlayer/clases2.php?editar=0&idcurso=1943895&idclase=112239955&modo=0",
     id: 11,
     name: "Ejercicio 11",
     disabled: false,
@@ -89,6 +100,7 @@ export const MyButtons = [
   },
   {
     section: "Actividades Vocabulario",
+    url:"https://www.blinklearning.com/coursePlayer/clases2.php?editar=0&idcurso=1943895&idclase=112239955&modo=0",
     id: 12,
     name: "Ejercicio 12",
     disabled: false,
@@ -97,6 +109,7 @@ export const MyButtons = [
   },
   {
     section: "Actividades Vocabulario",
+    url:"https://www.blinklearning.com/coursePlayer/clases2.php?editar=0&idcurso=1943895&idclase=112239955&modo=0",
     id: 13,
     name: "Ejercicio 13",
     disabled: true,
@@ -105,6 +118,7 @@ export const MyButtons = [
   },
   {
     section: "Actividades Vocabulario",
+    url:"https://www.blinklearning.com/coursePlayer/clases2.php?editar=0&idcurso=1943895&idclase=112239955&modo=0",
     id: 14,
     name: "Ejercicio 14",
     disabled: true,
@@ -113,6 +127,7 @@ export const MyButtons = [
   },
   {
     section: "Actividades Vocabulario",
+    url:"https://www.blinklearning.com/coursePlayer/clases2.php?editar=0&idcurso=1943895&idclase=112239955&modo=0",
     id: 15,
     name: "Ejercicio 15",
     disabled: true,
@@ -121,6 +136,7 @@ export const MyButtons = [
   },
   {
     section: "Actividades Gramática",
+    
     id: 1,
     name: "Ejercicio 1",
     disabled: false,
